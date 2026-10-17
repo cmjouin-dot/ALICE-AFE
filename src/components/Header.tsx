@@ -33,7 +33,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-alice-border/80 bg-white/95 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between sm:h-[4.25rem]">
-        <Logo />
+        <Logo priority />
 
         <nav
           className="hidden items-center gap-1 lg:flex"

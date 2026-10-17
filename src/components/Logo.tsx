@@ -1,27 +1,51 @@
+import Image from "next/image";
 import Link from "next/link";
+
+type LogoSize = "header" | "hero";
 
 type LogoProps = {
   className?: string;
   priority?: boolean;
+  size?: LogoSize;
 };
 
-/**
- * Wordmark typographique provisoire.
- * Remplacer par <Image src="/images/alice-logo.png" ... /> lorsque le logo est fourni.
- */
-export function Logo({ className = "" }: LogoProps) {
+const sizeConfig: Record<
+  LogoSize,
+  { width: number; height: number; className: string }
+> = {
+  header: {
+    width: 148,
+    height: 99,
+    className: "h-10 w-auto sm:h-11",
+  },
+  hero: {
+    width: 260,
+    height: 173,
+    className: "h-[5.5rem] w-auto sm:h-28 lg:h-32",
+  },
+};
+
+export function Logo({
+  className = "",
+  priority = false,
+  size = "header",
+}: LogoProps) {
+  const config = sizeConfig[size];
+
   return (
     <Link
       href="/"
-      className={`group inline-flex items-baseline gap-2 no-underline ${className}`}
+      className={`inline-flex items-center no-underline ${className}`}
       aria-label="ALICE — Accueil"
     >
-      <span className="font-display text-2xl font-medium tracking-tight text-alice-navy transition-colors group-hover:text-alice-blue sm:text-[1.65rem]">
-        ALICE
-      </span>
-      <span className="hidden text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-alice-muted sm:inline">
-        AFE
-      </span>
+      <Image
+        src="/images/alice-logo.jpg"
+        alt="ALICE — Alliance des Libéraux, Indépendants, Centristes de l'Étranger"
+        width={config.width}
+        height={config.height}
+        priority={priority}
+        className={`${config.className} object-contain`}
+      />
     </Link>
   );
 }

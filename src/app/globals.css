@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --alice-blue: #4d73a5;
+  /* Palette inspirée du logo officiel ALICE */
+  --alice-blue: #416eac;
   --alice-navy: #193451;
-  --alice-coral: #f06468;
+  --alice-coral: #e5394a;
+  --alice-green: #009770;
   --alice-white: #ffffff;
   --alice-gray: #f7f8fa;
   --alice-muted: #5c6b7a;
   --alice-border: #e4e8ee;
-  --alice-focus: #4d73a5;
+  --alice-focus: #416eac;
   --background: var(--alice-white);
   --foreground: var(--alice-navy);
 }
@@ -17,6 +19,7 @@
   --color-alice-blue: var(--alice-blue);
   --color-alice-navy: var(--alice-navy);
   --color-alice-coral: var(--alice-coral);
+  --color-alice-green: var(--alice-green);
   --color-alice-white: var(--alice-white);
   --color-alice-gray: var(--alice-gray);
   --color-alice-muted: var(--alice-muted);

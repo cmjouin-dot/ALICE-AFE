@@ -6,6 +6,7 @@ import { Container } from "@/components/Container";
 import { ConvictionPillar } from "@/components/ConvictionPillar";
 import { DraftNotice } from "@/components/DraftNotice";
 import { EluCard } from "@/components/EluCard";
+import { Logo } from "@/components/Logo";
 import { SectionHeading } from "@/components/SectionHeading";
 import { articles } from "@/data/actualites";
 import { actions } from "@/data/actions";
@@ -20,20 +21,24 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-alice-gray">
+      <section className="relative overflow-hidden bg-white">
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-[linear-gradient(135deg,transparent_0%,rgba(77,115,165,0.08)_45%,rgba(25,52,81,0.12)_100%)] lg:block"
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-[linear-gradient(135deg,transparent_0%,rgba(65,110,172,0.07)_40%,rgba(0,151,112,0.05)_70%,rgba(25,52,81,0.08)_100%)] lg:block"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--alice-green)_0%,var(--alice-blue)_50%,var(--alice-coral)_100%)] opacity-80"
           aria-hidden
         />
         <div
           className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-alice-border"
           aria-hidden
         />
-        <Container className="relative py-20 sm:py-28 lg:py-32">
-          <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.22em] text-alice-blue">
-            {siteConfig.name}
-          </p>
-          <p className="animate-fade-up animate-delay-1 mt-3 max-w-xl text-sm text-alice-muted sm:text-base">
+        <Container className="relative py-16 sm:py-24 lg:py-28">
+          <div className="animate-fade-up">
+            <Logo size="hero" priority />
+          </div>
+          <p className="animate-fade-up animate-delay-1 mt-6 max-w-xl text-sm text-alice-muted sm:text-base">
             {siteConfig.fullName}
           </p>
           <h1 className="animate-fade-up animate-delay-1 font-display mt-8 max-w-3xl text-4xl font-medium leading-[1.15] tracking-tight text-alice-navy sm:text-5xl lg:text-6xl">

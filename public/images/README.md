@@ -1,7 +1,5 @@
 # Images
 
-Placez le logo provisoire ici :
+- `alice-logo.jpg` — logo officiel ALICE (Alliance des Libéraux, Indépendants, Centristes de l'Étranger)
 
-- `alice-logo.png` — logo ALICE
-
-Le site utilise actuellement un wordmark typographique. Pour activer le logo fichier, ajoutez `alice-logo.png` puis mettez à jour `src/components/Logo.tsx`.
+Utilisé via `src/components/Logo.tsx` (`next/image`) dans l'en-tête et le hero d'accueil.
