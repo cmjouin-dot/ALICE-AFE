@@ -19,9 +19,9 @@ const sizeConfig: Record<
     className: "h-10 w-auto sm:h-11",
   },
   hero: {
-    width: 260,
-    height: 173,
-    className: "h-[5.5rem] w-auto sm:h-28 lg:h-32",
+    width: 390,
+    height: 260,
+    className: "h-[8.25rem] w-auto sm:h-[10.5rem] lg:h-48",
   },
 };
 
