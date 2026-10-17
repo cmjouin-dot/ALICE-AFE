@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ALICE — Site institutionnel
 
-## Getting Started
+Site web du groupe **ALICE** (*Alliance des Libéraux, Indépendants, Centristes de l'Étranger*), groupe d'élus à l'[Assemblée des Français de l'étranger](https://www.assemblee-afe.fr/) (AFE).
 
-First, run the development server:
+Ce dépôt est prêt pour publication sur **GitHub** et déploiement sur **Vercel**.
+
+## Prérequis
+
+- Node.js 20 LTS ou plus récent
+- npm 10 ou plus récent
+
+## Installation locale
 
 ```bash
+git clone <url-du-depot>
+cd ALICE-AFE
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Commande        | Description                         |
+| --------------- | ----------------------------------- |
+| `npm run dev`   | Serveur de développement            |
+| `npm run build` | Build de production                 |
+| `npm run start` | Serveur après `npm run build`       |
+| `npm run lint`  | Analyse ESLint                      |
 
-## Learn More
+## Stack
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js (App Router) + TypeScript
+- Tailwind CSS
+- Lucide React
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Aucune base de données, API payante ni authentification n'est requise pour cette version.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Structure
 
-## Deploy on Vercel
+```
+src/
+  app/           # Routes (Accueil, Convictions, Élus, Actions, Actualités, Contact)
+  components/    # Composants réutilisables (Header, Footer, cartes, etc.)
+  data/          # Contenu éditable (élus, articles, convictions, actions, site)
+public/images/   # Logo et médias (placer alice-logo.png ici le cas échéant)
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Édition du contenu
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Les textes et listes sont centralisés dans `src/data/` :
+
+| Fichier            | Contenu                                      |
+| ------------------ | -------------------------------------------- |
+| `site.ts`          | Nom, description, e-mail, navigation         |
+| `elus.ts`          | Profils des élus                             |
+| `convictions.ts`   | Principes politiques                         |
+| `actions.ts`       | Présentation des actions (brouillon)         |
+| `actualites.ts`    | Articles (échantillons de démonstration)     |
+
+## Contenu provisoire
+
+- Les **noms des élus** sont réels ; circonscriptions, responsabilités, photos et biographies restent des **placeholders** clairement marqués.
+- Les **actualités** sont des **contenus de démonstration** (`isDemo: true`), signalés dans l'interface.
+- Les **actions** sont présentées comme **brouillons**, sans réalisations inventées.
+
+## Déploiement GitHub → Vercel
+
+1. Créez un dépôt GitHub et poussez ce projet.
+2. Sur [vercel.com](https://vercel.com), importez le dépôt.
+3. Vercel détecte Next.js automatiquement.
+4. Laissez les réglages par défaut (`npm run build` / `.next`).
+5. Déployez.
+
+**Variables d'environnement :** aucune n'est nécessaire pour cette première version.
+
+**Domaine :** configurez un domaine personnalisé dans le tableau de bord Vercel lorsque vous le souhaitez.
+
+## Sécurité
+
+- Ne commitez jamais de fichiers `.env`, clés API ou secrets.
+- `.gitignore` exclut déjà `node_modules/`, `.next/`, `.env*`, `.vercel/` et les certificats `*.pem`.
+
+## Identité visuelle
+
+| Couleur              | Code      |
+| -------------------- | --------- |
+| Bleu institutionnel  | `#4D73A5` |
+| Marine               | `#193451` |
+| Corail               | `#F06468` |
+| Blanc                | `#FFFFFF` |
+| Gris très clair      | `#F7F8FA` |
+
+## Licence
+
+Contenu éditorial © ALICE. Tous droits réservés.
+Ce site n'est pas un site officiel du gouvernement français ni de l'AFE en tant qu'institution.
