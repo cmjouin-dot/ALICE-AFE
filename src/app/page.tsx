@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ArticleCard } from "@/components/ArticleCard";
@@ -28,18 +29,10 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-white">
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-[linear-gradient(135deg,transparent_0%,rgba(65,110,172,0.07)_40%,rgba(0,151,112,0.05)_70%,rgba(25,52,81,0.08)_100%)] lg:block"
+          className="pointer-events-none absolute inset-x-0 top-0 z-10 h-1 bg-[linear-gradient(90deg,var(--alice-green)_0%,var(--alice-blue)_50%,var(--alice-coral)_100%)] opacity-80"
           aria-hidden
         />
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--alice-green)_0%,var(--alice-blue)_50%,var(--alice-coral)_100%)] opacity-80"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-alice-border"
-          aria-hidden
-        />
-        <Container className="relative py-16 sm:py-24 lg:py-28">
+        <Container className="relative py-14 sm:py-20 lg:py-24">
           <div className="animate-fade-up">
             <Logo size="hero" priority />
           </div>
@@ -64,6 +57,17 @@ export default function HomePage() {
             </Button>
           </div>
         </Container>
+        <div className="animate-fade-up animate-delay-3 relative w-full">
+          <Image
+            src="/images/alice-groupe-afe.jpg"
+            alt="Membres du groupe ALICE lors d'une séance de l'Assemblée des Français de l'étranger"
+            width={1017}
+            height={490}
+            priority
+            sizes="100vw"
+            className="h-auto w-full object-cover object-center sm:max-h-[28rem] lg:max-h-[32rem]"
+          />
+        </div>
       </section>
 
       {/* Notre méthode */}
