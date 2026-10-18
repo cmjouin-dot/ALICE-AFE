@@ -27,7 +27,7 @@ export function PrincipleCard({ principe, index }: PrincipleCardProps) {
   const number = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="border-t border-alice-border pt-6">
+    <article className="border-t border-alice-border pt-5">
       <div className="flex items-start justify-between gap-4">
         <p className="text-xs font-semibold tracking-[0.18em] text-alice-coral">
           {number}
@@ -38,10 +38,10 @@ export function PrincipleCard({ principe, index }: PrincipleCardProps) {
           aria-hidden
         />
       </div>
-      <h3 className="font-display mt-3 text-2xl font-medium text-alice-navy">
+      <h3 className="font-display mt-2.5 text-2xl font-medium text-alice-navy">
         {principe.title}
       </h3>
-      <p className="mt-3 text-alice-muted">{principe.summary}</p>
+      <p className="mt-2.5 text-alice-muted">{principe.summary}</p>
     </article>
   );
 }
