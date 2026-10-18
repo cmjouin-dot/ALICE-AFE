@@ -1,6 +1,5 @@
 # Images
 
-- `alice-logo.jpg` — logo officiel ALICE
-- `alice-groupe-afe.jpg` — photo de groupe des élus ALICE à l'AFE
+- `alice-logo.jpg` — logo officiel ALICE (Alliance des Libéraux, Indépendants, Centristes de l'Étranger)
 
-Le logo est utilisé via `src/components/Logo.tsx`. La photo de groupe apparaît en pleine largeur sur la page d'accueil.
+Utilisé via `src/components/Logo.tsx` (`next/image`) dans l'en-tête et le hero d'accueil.
