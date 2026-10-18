@@ -23,7 +23,7 @@ export default function MentionsLegalesPage() {
           <section>
             <h2>Éditeur</h2>
             <p>
-              Le présent site est édité par le groupe politique{" "}
+              Le présent site est édité par le groupe d&apos;élus{" "}
               {siteConfig.name} ({siteConfig.fullName}), regroupement d&apos;élus
               siégeant à l&apos;{siteConfig.afeName}.
             </p>

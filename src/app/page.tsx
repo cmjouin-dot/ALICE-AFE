@@ -3,15 +3,20 @@ import { ArrowRight } from "lucide-react";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
-import { ConvictionPillar } from "@/components/ConvictionPillar";
 import { DraftNotice } from "@/components/DraftNotice";
 import { EluCard } from "@/components/EluCard";
 import { Logo } from "@/components/Logo";
+import { PrincipleCard } from "@/components/PrincipleCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { articles } from "@/data/actualites";
 import { actions } from "@/data/actions";
-import { convictions } from "@/data/convictions";
 import { elus } from "@/data/elus";
+import { methodeIntro, principes } from "@/data/principes";
+import {
+  priorites,
+  prioritesIntro,
+  prioritesStatut,
+} from "@/data/priorites";
 import { siteConfig } from "@/data/site";
 
 export default function HomePage() {
@@ -41,90 +46,122 @@ export default function HomePage() {
           <p className="animate-fade-up animate-delay-1 mt-6 max-w-xl text-sm text-alice-muted sm:text-base">
             {siteConfig.fullName}
           </p>
+          <p className="animate-fade-up animate-delay-1 mt-4 max-w-2xl text-base font-medium text-alice-navy sm:text-lg">
+            {siteConfig.tagline}
+          </p>
           <h1 className="animate-fade-up animate-delay-1 font-display mt-8 max-w-3xl text-4xl font-medium leading-[1.15] tracking-tight text-alice-navy sm:text-5xl lg:text-6xl">
-            Des convictions communes.
-            <br />
-            Des voix libres.
-            <br />
-            Une ambition collective.
+            Ensemble, au service des Français de l&apos;étranger.
           </h1>
           <p className="animate-fade-up animate-delay-2 mt-8 max-w-2xl text-lg text-alice-muted sm:text-xl">
-            ALICE rassemble des élus centristes, indépendants et progressistes,
-            unis par la volonté de défendre les Français de l&apos;étranger dans
-            un esprit de dialogue, de responsabilité et de liberté.
-          </p>
-          <p className="animate-fade-up animate-delay-2 mt-5 max-w-2xl text-base font-medium text-alice-navy sm:text-lg">
-            Notre engagement&nbsp;: une représentation équitable, une action
-            constructive et une indépendance politique sans compromis sur nos
-            valeurs.
+            ALICE rassemble des élus de l&apos;Assemblée des Français de
+            l&apos;étranger autour d&apos;une méthode de travail fondée sur le
+            dialogue, la collégialité et la recherche de solutions concrètes.
           </p>
           <div className="animate-fade-up animate-delay-3 mt-10 flex flex-wrap gap-4">
-            <Button href="/convictions">Découvrir ALICE</Button>
-            <Button href="/actions" variant="secondary">
-              Nos actions
+            <Button href="/engagements">Découvrir nos engagements</Button>
+            <Button href="/#nos-priorites" variant="secondary">
+              Nos priorités
             </Button>
           </div>
         </Container>
       </section>
 
+      {/* Notre méthode */}
+      <section
+        className="border-y border-alice-border bg-alice-gray py-20 sm:py-24"
+        aria-labelledby="notre-methode"
+      >
+        <Container>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHeading
+              id="notre-methode"
+              eyebrow="Notre méthode"
+              title="Une autre manière de travailler ensemble"
+              description={methodeIntro}
+            />
+            <Link
+              href="/engagements"
+              className="shrink-0 text-sm font-semibold text-alice-blue underline-offset-4 hover:underline"
+            >
+              Nos engagements
+            </Link>
+          </div>
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {principes.map((principe, i) => (
+              <PrincipleCard key={principe.id} principe={principe} index={i} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Nos priorités */}
+      <section
+        id="nos-priorites"
+        className="scroll-mt-24 py-20 sm:py-24"
+        aria-labelledby="nos-priorites-title"
+      >
+        <Container>
+          <SectionHeading
+            id="nos-priorites-title"
+            eyebrow="Nos priorités"
+            title="Des priorités concrètes pour les Français de l'étranger"
+            description={prioritesIntro}
+          />
+          <DraftNotice className="mt-8">{prioritesStatut}</DraftNotice>
+          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {priorites.map((priorite, index) => (
+              <article
+                key={priorite.id}
+                className="border-t border-alice-border pt-6"
+              >
+                <p className="text-xs font-semibold tracking-[0.18em] text-alice-green">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <h3 className="font-display mt-3 text-2xl font-medium text-alice-navy">
+                  {priorite.title}
+                </h3>
+                <p className="mt-3 text-alice-muted">{priorite.summary}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* Qui sommes-nous */}
-      <section className="py-20 sm:py-24" aria-labelledby="qui-sommes-nous">
+      <section
+        className="border-y border-alice-border bg-alice-gray py-20 sm:py-24"
+        aria-labelledby="qui-sommes-nous"
+      >
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <SectionHeading
                 id="qui-sommes-nous"
                 eyebrow="Qui sommes-nous"
-                title="Un groupe d'élus à l'Assemblée des Français de l'étranger"
+                title="Un groupe d'élus au sein de l'Assemblée des Français de l'étranger"
               />
             </div>
             <div className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-alice-muted">
-                ALICE rassemble dix élus de l&apos;
-                {siteConfig.afeName}, réunis autour d&apos;une sensibilité
-                centriste, libérale et progressiste. Nous agissons pour les
-                Français établis hors de France avec indépendance, sens du
-                collectif et rejet clair des extrêmes.
+                ALICE rassemble dix élus de l&apos;{siteConfig.afeName}. Ses
+                membres apportent des expériences, des ancrages géographiques et
+                des sensibilités politiques variés. Le groupe valorise le
+                jugement indépendant de chacun et le travail collectif.
               </p>
               <p className="mt-5 text-lg leading-relaxed text-alice-muted">
-                Notre méthode repose sur le dialogue, la transparence et la
-                concertation. Nous recherchons la coopération utile au sein de
-                l&apos;institution, sans renoncer à notre identité politique ni
-                à la liberté de jugement de chacun.
+                Notre vocation est de contribuer utilement aux délibérations de
+                l&apos;Assemblée et d&apos;agir concrètement pour les Français
+                établis hors de France, dans un esprit de dialogue avec
+                l&apos;ensemble des groupes.
               </p>
               <Link
-                href="/elus"
+                href="/qui-sommes-nous"
                 className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-alice-blue underline-offset-4 hover:underline"
               >
-                Rencontrer nos élus
+                En savoir plus
                 <ArrowRight size={16} aria-hidden />
               </Link>
             </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Convictions */}
-      <section className="border-y border-alice-border bg-alice-gray py-20 sm:py-24" aria-labelledby="nos-convictions">
-        <Container>
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <SectionHeading
-              id="nos-convictions"
-              eyebrow="Nos convictions"
-              title="Cinq principes pour une représentation exigeante"
-              description="Indépendance, centre progressiste, gouvernance collective, équité et dialogue au service de l'action."
-            />
-            <Link
-              href="/convictions"
-              className="shrink-0 text-sm font-semibold text-alice-blue underline-offset-4 hover:underline"
-            >
-              Lire nos convictions
-            </Link>
-          </div>
-          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {convictions.map((c, i) => (
-              <ConvictionPillar key={c.id} conviction={c} index={i} />
-            ))}
           </div>
         </Container>
       </section>
@@ -136,8 +173,8 @@ export default function HomePage() {
             <SectionHeading
               id="nos-elus"
               eyebrow="Nos élus"
-              title="Dix représentants engagés"
-              description="Les dix élus du groupe. Circonscriptions, photographies et biographies seront précisées prochainement."
+              title="Dix représentants au sein de l'AFE"
+              description="Les dix élus du groupe. Circonscriptions, photographies et biographies seront précisées dès validation des informations."
             />
             <Link
               href="/elus"
@@ -156,20 +193,23 @@ export default function HomePage() {
       </section>
 
       {/* Actions */}
-      <section className="border-y border-alice-border bg-alice-gray py-20 sm:py-24" aria-labelledby="nos-actions">
+      <section
+        className="border-y border-alice-border bg-alice-gray py-20 sm:py-24"
+        aria-labelledby="nos-actions"
+      >
         <Container>
           <SectionHeading
             id="nos-actions"
-            eyebrow="Nos actions"
-            title="Un travail institutionnel au service des Français de l'étranger"
-            description="Commissions, initiatives et représentation : une présentation sobre de notre méthode de travail."
+            eyebrow="Nos travaux"
+            title="Nos travaux et nos actions"
+            description="Une structure claire pour présenter, lorsqu'ils seront disponibles, nos contributions, travaux en commission et résultats documentés."
           />
           <DraftNotice className="mt-8">
-            Contenu brouillon — aucune réalisation inventée n&apos;est présentée
-            ici.
+            Contenu en cours de constitution — aucune action ou résultat n&apos;est
+            inventé ici.
           </DraftNotice>
           <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            {actions.map((action) => (
+            {actions.slice(0, 3).map((action) => (
               <article
                 key={action.id}
                 className="border-t border-alice-border pt-6"
@@ -186,7 +226,7 @@ export default function HomePage() {
           </div>
           <div className="mt-10">
             <Button href="/actions" variant="secondary">
-              Découvrir nos actions
+              Voir nos travaux
             </Button>
           </div>
         </Container>
@@ -199,8 +239,8 @@ export default function HomePage() {
             <SectionHeading
               id="actualites"
               eyebrow="Actualités"
-              title="Dernières publications"
-              description="Articles, déclarations et points d'actualité — exemples de démonstration pour l'instant."
+              title="Suivre les travaux du groupe"
+              description="Communiqués et points d'actualité — exemples de démonstration en attendant les publications validées."
             />
             <Link
               href="/actualites"
@@ -218,7 +258,10 @@ export default function HomePage() {
       </section>
 
       {/* Contact teaser */}
-      <section className="border-t border-alice-border bg-alice-navy py-20 text-white sm:py-24" aria-labelledby="contact-teaser">
+      <section
+        className="border-t border-alice-border bg-alice-navy py-20 text-white sm:py-24"
+        aria-labelledby="contact-teaser"
+      >
         <Container>
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-alice-coral">
@@ -231,8 +274,8 @@ export default function HomePage() {
               Écrire au groupe ALICE
             </h2>
             <p className="mt-5 text-lg text-white/70">
-              Une question, une remarque, une demande d&apos;information ? Nous
-              serons heureux d&apos;échanger avec vous.
+              Une question sur nos travaux ou une demande d&apos;information ?
+              Nous sommes à votre écoute.
             </p>
             <div className="mt-8">
               <Link

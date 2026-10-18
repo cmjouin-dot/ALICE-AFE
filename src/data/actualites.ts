@@ -25,30 +25,30 @@ export const articles: Article[] = [
     slug: "lancement-site-alice",
     title: "Lancement du site institutionnel d'ALICE",
     excerpt:
-      "Le groupe ALICE ouvre un espace numérique pour présenter ses convictions, ses élus et ses travaux à l'AFE.",
+      "Le groupe ALICE ouvre un espace numérique pour présenter ses élus, sa méthode de travail et ses travaux à l'AFE.",
     category: "Communiqué",
     publishedAt: "2026-10-01",
     author: "Groupe ALICE",
     isDemo: true,
     content: [
       "[Contenu de démonstration] Ce communiqué est un exemple éditorial destiné à illustrer la rubrique Actualités. Il ne constitue pas une publication officielle validée.",
-      "Le site ALICE a vocation à devenir le point d'entrée clair et accessible pour comprendre le positionnement du groupe, découvrir ses élus et suivre ses travaux au sein de l'Assemblée des Français de l'étranger.",
-      "Les pages seront enrichies au fur et à mesure que les informations définitives — noms, photographies, biographies, textes validés — seront fournies par le groupe.",
+      "Le site ALICE a vocation à devenir le point d'entrée clair et accessible pour découvrir les élus du groupe, comprendre sa méthode de travail et suivre ses contributions au sein de l'Assemblée des Français de l'étranger.",
+      "Les pages seront enrichies au fur et à mesure que les informations définitives — photographies, biographies, textes validés — seront fournies par le groupe.",
     ],
   },
   {
     slug: "representation-constructive",
     title: "Pour une représentation constructive des Français de l'étranger",
     excerpt:
-      "ALICE affirme une méthode : écouter, proposer, travailler avec sérieux au sein de l'institution.",
+      "ALICE affirme une méthode : écouter, proposer et travailler avec sérieux au sein de l'institution.",
     category: "Déclaration",
     publishedAt: "2026-09-15",
     author: "Groupe ALICE",
     isDemo: true,
     content: [
       "[Contenu de démonstration] Cette déclaration est un texte d'exemple. Sa formulation définitive devra être approuvée par les élus du groupe.",
-      "Nous croyons à une représentation qui allie indépendance de jugement et sens du collectif. Les Français de l'étranger méritent des élus capables de dialoguer sans renoncer à leurs principes.",
-      "Dans les semaines à venir, cette rubrique accueillera des prises de position, des comptes rendus de travaux et des informations utiles aux concitoyens.",
+      "Nous croyons à une représentation qui allie jugement indépendant et sens du collectif. Les Français de l'étranger méritent des élus capables de dialoguer et de rechercher des solutions concrètes.",
+      "Dans les semaines à venir, cette rubrique accueillera des comptes rendus de travaux et des informations utiles aux concitoyens, dès qu'ils auront été validés.",
     ],
   },
   {

@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { DraftNotice } from "@/components/DraftNotice";
 import { PageHero } from "@/components/PageHero";
-import { actions } from "@/data/actions";
+import { actions, actionsIntro } from "@/data/actions";
 
 export const metadata: Metadata = {
   title: "Nos actions",
   description:
-    "Travail en commissions, initiatives et représentation des Français de l'étranger par le groupe ALICE.",
+    "Travaux, contributions et actions du groupe ALICE au sein de l'Assemblée des Français de l'étranger.",
 };
 
 export default function ActionsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Nos actions"
-        title="Un travail parlementaire clair et utile"
-        description="Présentation éditoriale de notre méthode : commissions de l'AFE, initiatives politiques et représentation des Français de l'étranger."
+        eyebrow="Nos travaux"
+        title="Nos travaux et nos actions"
+        description={actionsIntro}
       >
         <DraftNotice>
-          Contenu brouillon. Cette page ne revendique aucune réalisation non
-          validée par le groupe.
+          Structure éditoriale en place. Aucune proposition, vote, résultat ou
+          prise de position n&apos;est inventé sur cette page.
         </DraftNotice>
       </PageHero>
 
@@ -55,12 +56,18 @@ export default function ActionsPage() {
 
         <aside className="mx-auto mt-20 max-w-3xl border-t border-alice-border pt-10">
           <h2 className="font-display text-2xl font-medium text-alice-navy">
-            Prochaine étape éditoriale
+            Actualités associées
           </h2>
           <p className="mt-4 text-alice-muted">
-            Dès que le groupe aura validé des éléments concrets — mandats en
-            commission, textes déposés, initiatives publiques — cette page sera
-            enrichie de manière factuelle et datée.
+            Les publications validées du groupe seront également accessibles
+            dans la rubrique{" "}
+            <Link
+              href="/actualites"
+              className="font-semibold text-alice-blue underline-offset-4 hover:underline"
+            >
+              Actualités
+            </Link>
+            .
           </p>
         </aside>
       </Container>

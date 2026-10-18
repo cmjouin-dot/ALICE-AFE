@@ -4,8 +4,10 @@ export const siteConfig = {
     "Alliance des Libéraux, Indépendants, Centristes de l'Étranger",
   shortDescription:
     "Groupe d'élus à l'Assemblée des Français de l'étranger",
+  tagline:
+    "Des élus engagés, une méthode collective, des résultats concrets pour les Français de l'étranger.",
   description:
-    "ALICE rassemble des élus centristes, indépendants et progressistes, unis pour défendre les Français de l'étranger dans un esprit de dialogue, de responsabilité et de liberté.",
+    "ALICE rassemble des élus de l'Assemblée des Français de l'étranger autour d'une méthode de travail fondée sur le dialogue, la collégialité et la recherche de solutions concrètes.",
   email: "contact@alice-afe.fr",
   afeName: "Assemblée des Français de l'étranger",
   afeShort: "AFE",
@@ -15,7 +17,8 @@ export const siteConfig = {
 
 export const navigation = [
   { href: "/", label: "Accueil" },
-  { href: "/convictions", label: "Nos convictions" },
+  { href: "/qui-sommes-nous", label: "Qui sommes-nous" },
+  { href: "/engagements", label: "Nos engagements" },
   { href: "/elus", label: "Nos élus" },
   { href: "/actions", label: "Nos actions" },
   { href: "/actualites", label: "Actualités" },

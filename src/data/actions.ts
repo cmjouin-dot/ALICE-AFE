@@ -1,53 +1,85 @@
+export type ActionCategory =
+  | "Propositions et contributions"
+  | "Travaux en commission"
+  | "Interventions et prises de position"
+  | "Résultats obtenus"
+  | "Actualités du groupe";
+
 export type ActionItem = {
   id: string;
   title: string;
-  category: "Commission" | "Initiative" | "Représentation";
+  category: ActionCategory;
   summary: string;
   body: string[];
-  status: "brouillon";
+  status: "placeholder";
 };
 
 /**
- * Contenu de démonstration / brouillon — ne constitue pas un bilan officiel.
+ * Structure éditoriale des travaux du groupe.
+ * Aucune action, vote ou résultat inventé — placeholders explicites.
  */
+export const actionsIntro =
+  "Cette page accueillera, au fur et à mesure de leur validation, les contributions, travaux et positions publiques du groupe ALICE au sein de l'Assemblée des Français de l'étranger.";
+
 export const actions: ActionItem[] = [
   {
-    id: "commissions-afe",
-    title: "Travail en commissions de l'AFE",
-    category: "Commission",
+    id: "propositions-contributions",
+    title: "Propositions et contributions",
+    category: "Propositions et contributions",
     summary:
-      "Participation active aux travaux des commissions de l'Assemblée des Français de l'étranger.",
+      "Textes, amendements, contributions écrites et propositions formulées par les élus du groupe.",
     body: [
-      "Les élus du groupe ALICE prennent part aux débats et travaux des commissions de l'AFE, dans le respect du règlement et des priorités collectives.",
-      "[Brouillon] La liste précise des commissions, mandats et contributions sera publiée après validation du groupe.",
-      "Cette section servira à documenter, de manière transparente, l'implication parlementaire des élus.",
+      "[À compléter] Aucune proposition n'est publiée à ce stade.",
+      "Dès qu'une contribution aura été validée par le groupe, elle pourra être présentée ici de manière factuelle, avec sa date et son objet.",
     ],
-    status: "brouillon",
+    status: "placeholder",
   },
   {
-    id: "initiatives-politiques",
-    title: "Initiatives et propositions",
-    category: "Initiative",
+    id: "travaux-commission",
+    title: "Travaux en commission",
+    category: "Travaux en commission",
     summary:
-      "Construction d'un agenda de propositions au service des Français de l'étranger.",
+      "Participation des élus ALICE aux commissions et instances de travail de l'AFE.",
     body: [
-      "ALICE souhaite formuler des propositions claires sur les sujets qui concernent la vie quotidienne, administrative et démocratique des Français établis hors de France.",
-      "[Brouillon] Aucune réalisation n'est revendiquée ici. Les axes d'initiative seront publiés après concertation interne.",
-      "L'objectif est d'offrir une lecture accessible des priorités du groupe, distincte d'un catalogue de promesses.",
+      "[À compléter] Les mandats en commission et les contributions associées seront listés après vérification.",
+      "Cette rubrique vise à rendre visible le travail institutionnel quotidien, sans en inventer le contenu.",
     ],
-    status: "brouillon",
+    status: "placeholder",
   },
   {
-    id: "representation-citoyens",
-    title: "Représentation des Français de l'étranger",
-    category: "Représentation",
+    id: "interventions-positions",
+    title: "Interventions et prises de position",
+    category: "Interventions et prises de position",
     summary:
-      "Une présence attentive aux réalités locales et aux attentes des concitoyens.",
+      "Interventions en séance, déclarations et positions publiques du groupe ou de ses élus.",
     body: [
-      "Représenter les Français de l'étranger, c'est écouter des situations très diverses selon les pays, les parcours professionnels et les configurations familiales.",
-      "[Brouillon] Les modalités de contact, de permanence et de remontée d'information seront précisées ultérieurement.",
-      "Cette page évoluera pour refléter le travail réel de représentation, sans inventer d'actions non réalisées.",
+      "[À compléter] Aucune prise de position n'est présentée ici tant qu'elle n'a pas été validée pour publication.",
+      "Les interventions publiées le seront avec le contexte institutionnel nécessaire à leur compréhension.",
     ],
-    status: "brouillon",
+    status: "placeholder",
+  },
+  {
+    id: "resultats-obtenus",
+    title: "Résultats obtenus",
+    category: "Résultats obtenus",
+    summary:
+      "Avancées concrètes auxquelles le groupe a contribué, lorsqu'elles pourront être documentées.",
+    body: [
+      "[À compléter] Aucun résultat n'est revendiqué à ce stade.",
+      "Les éventuels résultats seront décrits de façon mesurée, en distinguant ce qui relève d'une contribution du groupe et ce qui relève d'un travail collectif de l'Assemblée.",
+    ],
+    status: "placeholder",
+  },
+  {
+    id: "actualites-groupe",
+    title: "Actualités du groupe",
+    category: "Actualités du groupe",
+    summary:
+      "Points d'information sur la vie du groupe et le suivi de ses travaux.",
+    body: [
+      "[À compléter] Les actualités validées seront également accessibles dans la rubrique Actualités du site.",
+      "En l'absence de contenu officiel, aucun élément fictif n'est affiché ici.",
+    ],
+    status: "placeholder",
   },
 ];

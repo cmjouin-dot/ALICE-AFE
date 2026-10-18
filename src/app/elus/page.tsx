@@ -16,12 +16,13 @@ export default function ElusPage() {
     <>
       <PageHero
         eyebrow="Nos élus"
-        title="Dix élus pour une représentation indépendante"
-        description="Chaque profil dispose d'une page individuelle. Les circonscriptions, responsabilités et biographies restent à compléter."
+        title="Les élus du groupe ALICE"
+        description="Dix élus siégeant à l'Assemblée des Français de l'étranger. Chaque profil dispose d'une page individuelle. Les circonscriptions, responsabilités et biographies restent à compléter."
       >
         <DraftNotice>
           Liste classée par ordre alphabétique. Photos, circonscriptions et
-          biographies seront ajoutées dès validation des informations.
+          biographies seront ajoutées dès validation des informations. Aucun
+          mandat inventé n&apos;est présenté ici.
         </DraftNotice>
       </PageHero>
 

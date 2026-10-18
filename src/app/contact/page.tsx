@@ -48,9 +48,9 @@ export default function ContactPage() {
               Cadre
             </h2>
             <p className="mt-4 text-alice-muted">
-              {siteConfig.name} est un groupe politique indépendant au sein de
-              l&apos;{siteConfig.afeName}. Ce site n&apos;est pas un site
-              officiel du gouvernement français.
+              {siteConfig.name} est un groupe d&apos;élus au sein de l&apos;
+              {siteConfig.afeName}. Ce site n&apos;est pas un site officiel du
+              gouvernement français.
             </p>
           </div>
 

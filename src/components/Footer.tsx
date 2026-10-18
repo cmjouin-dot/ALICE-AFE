@@ -15,8 +15,11 @@ export function Footer() {
               {siteConfig.fullName}
             </p>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/55">
-              Groupe politique indépendant au sein de l&apos;
+              Groupe d&apos;élus au sein de l&apos;
               {siteConfig.afeName} ({siteConfig.afeShort}).
+            </p>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-white/45">
+              {siteConfig.tagline}
             </p>
           </div>
 
@@ -67,10 +70,10 @@ export function Footer() {
 
         <div className="mt-12 border-t border-white/15 pt-8">
           <p className="max-w-3xl text-sm leading-relaxed text-white/55">
-            Ce site est celui d&apos;un groupe politique indépendant au sein de
-            l&apos;Assemblée des Français de l&apos;étranger. Il ne constitue
-            pas un site officiel du gouvernement français ni de l&apos;AFE en
-            tant qu&apos;institution.
+            Ce site présente un groupe d&apos;élus au sein de l&apos;Assemblée
+            des Français de l&apos;étranger. Il ne constitue pas un site
+            officiel du gouvernement français ni de l&apos;AFE en tant
+            qu&apos;institution.
           </p>
           <p className="mt-4 text-sm text-white/40">
             © 2026 {siteConfig.name}. Tous droits réservés.

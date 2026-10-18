@@ -18,8 +18,8 @@ export default function ActualitesPage() {
     <>
       <PageHero
         eyebrow="Actualités"
-        title="Suivre les travaux et prises de position d'ALICE"
-        description="Une rubrique éditoriale sobre pour les communiqués, déclarations et mises à jour du groupe."
+        title="Suivre les travaux du groupe ALICE"
+        description="Une rubrique éditoriale sobre pour les communiqués, informations et mises à jour du groupe."
       >
         <DraftNotice>
           Les articles ci-dessous sont du contenu de démonstration,

@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     "Assemblée des Français de l'étranger",
     "Français de l'étranger",
     "élus",
-    "centre",
-    "indépendants",
+    "groupe parlementaire",
+    "représentation",
   ],
   openGraph: {
     type: "website",
