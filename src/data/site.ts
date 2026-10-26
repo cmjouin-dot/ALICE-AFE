@@ -20,29 +20,29 @@ export const sections = [
     href: "/notre-groupe",
     label: "Notre groupe",
     description:
-      "Découvrez ce qui nous rassemble, nos engagements et nos principes d'action au sein de l'Assemblée.",
+      "Notre identité, nos engagements et nos principes d'action.",
   },
   {
     href: "/representants",
     label: "Nos représentants à l'AFE",
-    description: "Les élus du groupe et la façon de les solliciter.",
+    description:
+      "Les élus ALICE et leurs responsabilités au sein de l'Assemblée.",
   },
   {
     href: "/priorites",
     label: "Nos priorités",
-    description: "Les sujets suivis dans les travaux de l'Assemblée.",
+    description: "Les sujets que nous souhaitons porter à l'Assemblée.",
   },
   {
     href: "/nos-travaux",
     label: "Nos travaux",
-    description:
-      "Rapports, comptes rendus et interventions de nos élus à l'Assemblée.",
+    description: "Rapports, comptes rendus et interventions de nos élus.",
   },
   {
     href: "/contact",
     label: "Contactez-nous",
     description:
-      "Transmettre une question, une difficulté ou une proposition.",
+      "Faites remonter une question, une difficulté ou une proposition à l'AFE.",
   },
 ] as const;
 

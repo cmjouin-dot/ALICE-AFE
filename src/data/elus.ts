@@ -17,8 +17,7 @@ export type Elu = {
 
 /**
  * Dix élus du groupe. Jean-Hervé Fraslin est placé avant Christophe Jouin.
- * Aucun courriel AFE n'a été fourni. La circonscription de Stéphanie Le Vaillant
- * Vignancour reste à confirmer.
+ * Aucun courriel AFE n'a été fourni.
  */
 export const elus: Elu[] = [
   {
@@ -29,7 +28,7 @@ export const elus: Elu[] = [
     roleAlice: "Présidente du groupe ALICE",
     commissions: ["Commission des finances et de la fiscalité"],
     fonctionsAfe: [],
-    circonscription: null,
+    circonscription: "Péninsule Ibérique",
     email: null,
   },
   {
