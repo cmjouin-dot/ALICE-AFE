@@ -8,7 +8,7 @@ export const siteConfig = {
     "Au service des conseillers des Français de l'étranger et des communautés qu'ils représentent.",
   description:
     "Groupe d'élus à l'Assemblée des Français de l'étranger. Les conseillers des Français de l'étranger peuvent y suivre le travail d'ALICE, joindre ses membres et leur soumettre une question.",
-  email: "contact@alice-afe.fr",
+  email: "christophe@christophejouin.com",
   afeName: "Assemblée des Français de l'étranger",
   afeShort: "AFE",
   url: "https://alice-afe.fr",
