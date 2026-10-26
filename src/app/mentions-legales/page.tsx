@@ -68,10 +68,10 @@ export default function MentionsLegalesPage() {
           <section>
             <h2>Données personnelles</h2>
             <p>
-              À ce stade, le site ne collecte pas de données via un formulaire de
-              contact. L&apos;envoi d&apos;un e-mail relève de votre client de
-              messagerie. Une politique de confidentialité pourra être ajoutée
-              lors de l&apos;évolution du site.
+              Les formulaires de contact sont affichés mais inactifs. Ils ne
+              transmettent aucun message et ne collectent aucune donnée. Lorsque
+              l&apos;envoi sera branché, cette page précisera les données
+              conservées et leur destinataire.
             </p>
           </section>
         </div>

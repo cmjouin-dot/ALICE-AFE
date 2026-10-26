@@ -36,7 +36,7 @@ export function Header() {
         {pathname === "/" ? <span aria-hidden className="w-0" /> : <Logo priority />}
 
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="hidden items-center gap-0.5 lg:flex"
           aria-label="Navigation principale"
         >
           {navigation.map((item) => {
@@ -45,7 +45,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative px-3 py-2 text-[0.9rem] font-medium transition-colors ${
+                className={`relative px-2.5 py-2 text-sm font-medium transition-colors ${
                   active
                     ? "text-alice-navy"
                     : "text-alice-muted hover:text-alice-navy"
@@ -55,7 +55,7 @@ export function Header() {
                 {item.label}
                 {active ? (
                   <span
-                    className="absolute inset-x-3 -bottom-[calc(0.5rem+1px)] h-0.5 bg-alice-coral"
+                    className="absolute inset-x-2.5 -bottom-[calc(0.5rem+1px)] h-0.5 bg-alice-coral"
                     aria-hidden
                   />
                 ) : null}

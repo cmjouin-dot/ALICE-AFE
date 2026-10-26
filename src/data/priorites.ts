@@ -1,54 +1,67 @@
+export type PrioriteStatut = "proposee" | "adoptee";
+
 export type Priorite = {
   id: string;
   title: string;
   summary: string;
+  statut: PrioriteStatut;
+};
+
+export const statutLabel: Record<PrioriteStatut, string> = {
+  proposee: "Priorité proposée",
+  adoptee: "Position adoptée",
 };
 
 /**
- * Axes thématiques proposés — à valider par les élus du groupe.
- * Ne constituent pas des positions formellement adoptées.
+ * Axes proposés au groupe. Aucun n'est une position officiellement adoptée.
  */
 export const prioritesStatut =
-  "Axes de travail proposés — en attente de validation par les élus d'ALICE. Ces thèmes ne constituent pas encore des engagements formellement adoptés par le groupe.";
+  "Ces priorités sont proposées. Aucune n'est, à ce stade, une position officiellement adoptée par le groupe.";
 
 export const prioritesIntro =
-  "Notre action se concentre sur les sujets qui ont un impact direct sur la vie quotidienne, les droits et les opportunités de nos compatriotes établis hors de France.";
+  "Sujets concrets suivis pour les Français établis hors de France. Un conseiller des Français de l'étranger peut demander que le groupe en porte un dans les travaux de l'Assemblée.";
 
 export const priorites: Priorite[] = [
   {
     id: "equite-fiscale",
     title: "Équité fiscale",
     summary:
-      "Défendre une fiscalité plus juste et mieux adaptée aux réalités des Français établis à l'étranger, en particulier face aux situations de double imposition et aux inégalités de traitement.",
+      "Fiscalité plus juste pour les Français de l'étranger, en particulier en cas de double imposition ou d'inégalité de traitement.",
+    statut: "proposee",
   },
   {
     id: "interets-economiques",
-    title: "Intérêts économiques et commerce extérieur",
+    title: "Intérêts économiques",
     summary:
-      "Accompagner les entrepreneurs français à l'international, soutenir les échanges économiques et valoriser les contributions de nos communautés au rayonnement économique de la France.",
+      "Entrepreneurs français à l'international, échanges économiques et contribution des communautés au commerce extérieur.",
+    statut: "proposee",
+  },
+  {
+    id: "education",
+    title: "Éducation",
+    summary:
+      "Enseignement français à l'étranger, bourses scolaires et dispositifs adaptés aux familles.",
+    statut: "proposee",
   },
   {
     id: "culture-francophonie",
     title: "Culture et francophonie",
     summary:
-      "Soutenir le rayonnement culturel français, la transmission de notre langue et les initiatives associatives qui font vivre la francophonie à travers le monde.",
+      "Rayonnement culturel, transmission du français et vie associative francophone.",
+    statut: "proposee",
   },
   {
-    id: "education-jeunesse",
-    title: "Éducation et jeunesse",
+    id: "services-consulaires",
+    title: "Services consulaires",
     summary:
-      "Défendre l'accès à l'enseignement français à l'étranger, les bourses scolaires et les dispositifs éducatifs adaptés aux besoins des familles.",
-  },
-  {
-    id: "services-publics",
-    title: "Services publics et démarches consulaires",
-    summary:
-      "Améliorer l'accessibilité, la simplicité et la qualité des services administratifs et consulaires, notamment grâce à une modernisation numérique centrée sur les usagers.",
+      "Accès, simplicité et qualité des démarches administratives et consulaires.",
+    statut: "proposee",
   },
   {
     id: "protection-sociale",
-    title: "Protection sociale et accès aux droits",
+    title: "Protection sociale",
     summary:
-      "Contribuer à une meilleure prise en compte des situations particulières des Français de l'étranger en matière de protection sociale, de retraite et d'accès aux droits.",
+      "Retraite, protection sociale et accès aux droits des Français de l'étranger.",
+    statut: "proposee",
   },
 ];

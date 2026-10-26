@@ -1,69 +1,90 @@
 import type { Metadata } from "next";
-import { Mail } from "lucide-react";
 import { Container } from "@/components/Container";
-import { DraftNotice } from "@/components/DraftNotice";
 import { PageHero } from "@/components/PageHero";
+import { PreparedForm } from "@/components/PreparedForm";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Contacter le groupe ${siteConfig.name} à l'Assemblée des Français de l'étranger.`,
+  title: "Contactez-nous",
+  description:
+    "Contacter le groupe ALICE ou préparer une question à porter à l'Assemblée des Français de l'étranger.",
 };
+
+const activation =
+  "Pour activer l'envoi, il faut l'adresse officielle qui recevra les messages, un service d'envoi côté serveur (messagerie transactionnelle ou SMTP), et une action serveur Next.js qui valide les champs puis transmet le message. Les mentions légales devront alors préciser la conservation des données. Tant que ce branchement n'est pas en place, les champs restent inactifs et aucun message n'est envoyé.";
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Écrire au groupe ALICE"
-        description="Pour toute question relative au groupe, à ses élus ou à ses travaux à l'Assemblée des Français de l'étranger."
+        title="Contactez-nous"
+        description="Deux prises de contact, préparées pour les conseillers des Français de l'étranger et pour toute demande adressée au groupe."
       />
 
-      <Container className="py-16 sm:py-20">
-        <div className="mx-auto max-w-2xl">
-          <DraftNotice>
-            Adresse e-mail provisoire. Remplacez-la par l&apos;adresse
-            officielle du groupe lorsqu&apos;elle sera disponible. Aucun
-            formulaire d&apos;envoi n&apos;est implémenté à ce stade.
-          </DraftNotice>
+      <Container className="py-14 sm:py-16">
+        <div className="mx-auto max-w-2xl space-y-16">
+          <p className="border-l-2 border-alice-coral pl-4 text-sm leading-relaxed text-alice-muted">
+            {activation}
+          </p>
 
-          <div className="mt-12 border-t border-alice-border pt-10">
-            <h2 className="font-display text-2xl font-medium text-alice-navy">
-              Courriel
-            </h2>
-            <p className="mt-4 text-alice-muted">
-              Vous pouvez nous joindre à l&apos;adresse suivante :
-            </p>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="mt-6 inline-flex items-center gap-3 text-lg font-semibold text-alice-blue underline-offset-4 hover:underline"
+          <section aria-labelledby="contact-general-titre">
+            <h2
+              id="contact-general-titre"
+              className="font-display text-3xl font-medium tracking-tight text-alice-navy"
             >
-              <Mail size={22} strokeWidth={1.75} aria-hidden />
-              {siteConfig.email}
-            </a>
-          </div>
-
-          <div className="mt-14 border-t border-alice-border pt-10">
-            <h2 className="font-display text-2xl font-medium text-alice-navy">
-              Cadre
+              Contact général
             </h2>
             <p className="mt-4 text-alice-muted">
-              {siteConfig.name} est un groupe d&apos;élus au sein de l&apos;
-              {siteConfig.afeName}. Ce site n&apos;est pas un site officiel du
-              gouvernement français.
+              Pour une demande d&apos;information sur le groupe, ses élus ou ses
+              travaux à l&apos;{siteConfig.afeName}.
             </p>
-          </div>
+            <div className="mt-8">
+              <PreparedForm
+                id="contact-general"
+                fields={[
+                  { id: "nom", label: "Nom" },
+                  { id: "courriel", label: "Courriel", type: "email" },
+                  { id: "objet", label: "Objet" },
+                  { id: "message", label: "Message", type: "textarea" },
+                ]}
+              />
+            </div>
+          </section>
 
-          <div className="mt-14 border-t border-alice-border pt-10">
-            <h2 className="font-display text-2xl font-medium text-alice-navy">
-              Accessibilité de la prise de contact
+          <section aria-labelledby="porter-votre-voix-titre">
+            <h2
+              id="porter-votre-voix-titre"
+              className="font-display text-3xl font-medium tracking-tight text-alice-navy"
+            >
+              Porter votre voix à l&apos;AFE
             </h2>
-            <p className="mt-4 text-alice-muted">
-              Le contact se fait par e-mail afin de rester simple et accessible.
-              Si vous avez besoin d&apos;un autre format d&apos;échange,
-              indiquez-le dans votre message.
-            </p>
-          </div>
+            <div className="mt-4 space-y-4 text-alice-muted">
+              <p>
+                Vous êtes conseiller des Français de l&apos;étranger. Vous
+                pouvez préparer ici une question, une difficulté ou une
+                proposition que les élus d&apos;ALICE pourraient relayer dans
+                les travaux de l&apos;Assemblée.
+              </p>
+              <p className="border-l-2 border-alice-border pl-4 text-sm">
+                Le dépôt d&apos;une question ne garantit pas qu&apos;elle sera
+                formellement présentée, ni qu&apos;elle sera inscrite à
+                l&apos;ordre du jour de l&apos;Assemblée des Français de
+                l&apos;étranger.
+              </p>
+            </div>
+            <div id="porter-votre-voix" className="mt-8 scroll-mt-28">
+              <PreparedForm
+                id="question-afe"
+                fields={[
+                  { id: "nom", label: "Nom du conseiller" },
+                  { id: "courriel", label: "Courriel", type: "email" },
+                  { id: "circonscription", label: "Circonscription" },
+                  { id: "objet", label: "Objet" },
+                  { id: "question", label: "Question", type: "textarea" },
+                ]}
+              />
+            </div>
+          </section>
         </div>
       </Container>
     </>
