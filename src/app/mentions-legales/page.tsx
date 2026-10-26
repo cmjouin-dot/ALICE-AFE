@@ -68,10 +68,11 @@ export default function MentionsLegalesPage() {
           <section>
             <h2>Données personnelles</h2>
             <p>
-              Les formulaires de contact sont affichés mais inactifs. Ils ne
-              transmettent aucun message et ne collectent aucune donnée. Lorsque
-              l&apos;envoi sera branché, cette page précisera les données
-              conservées et leur destinataire.
+              Les messages envoyés depuis les formulaires de contact sont
+              transmis par courriel à {siteConfig.email}, par
+              l&apos;intermédiaire du prestataire Resend. Ils ne sont pas
+              enregistrés dans une base de données du site. Le formulaire
+              n&apos;accepte pas de pièce jointe.
             </p>
           </section>
         </div>
