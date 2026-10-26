@@ -4,6 +4,7 @@ import {
   GraduationCap,
   Landmark,
   Leaf,
+  MessagesSquare,
   Shield,
   type LucideIcon,
 } from "lucide-react";
@@ -13,10 +14,17 @@ import { PageHero } from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Nos priorités",
   description:
-    "Services consulaires, éducation, protection sociale, emploi et transition écologique : les priorités du groupe ALICE.",
+    "Démocratie et proximité, services consulaires, éducation, protection sociale, emploi et transition écologique : les priorités du groupe ALICE.",
 };
 
 const priorites: { title: string; icon: LucideIcon; points: string[] }[] = [
+  {
+    title: "Démocratie et proximité",
+    icon: MessagesSquare,
+    points: [
+      "Une représentation efficace, à l'écoute et au plus près de vos réalités.",
+    ],
+  },
   {
     title: "Services consulaires",
     icon: Landmark,
@@ -70,18 +78,11 @@ export default function PrioritesPage() {
       <PageHero title="Nos priorités" />
 
       <Container className="py-14 sm:py-16">
-        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {priorites.map((priorite, index) => {
+        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {priorites.map((priorite) => {
             const Icon = priorite.icon;
             return (
-              <li
-                key={priorite.title}
-                className={
-                  index === priorites.length - 1
-                    ? "md:col-span-2 md:mx-auto md:w-full md:max-w-[calc(50%-0.75rem)]"
-                    : undefined
-                }
-              >
+              <li key={priorite.title}>
                 <article className="flex h-full flex-col border border-alice-border p-6 sm:p-7">
                   <Icon
                     size={28}
