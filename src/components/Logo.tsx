@@ -16,7 +16,7 @@ const sizeConfig: Record<
   header: {
     width: 148,
     height: 99,
-    className: "h-10 w-auto sm:h-11",
+    className: "h-9 w-auto max-h-9 sm:h-10 sm:max-h-10",
   },
   hero: {
     width: 390,

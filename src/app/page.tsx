@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
-import { Logo } from "@/components/Logo";
 import { sections } from "@/data/site";
 
 export default function HomePage() {
@@ -13,17 +12,13 @@ export default function HomePage() {
           className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--alice-green)_0%,var(--alice-blue)_50%,var(--alice-coral)_100%)] opacity-80"
           aria-hidden
         />
-        <Container className="relative pt-10 pb-0 sm:pt-14 lg:pt-16">
-          <div className="animate-fade-up">
-            <Logo size="hero" priority />
-          </div>
-          <h1 className="animate-fade-up animate-delay-1 font-display mt-8 max-w-4xl text-4xl font-medium leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
-            <span className="block text-alice-navy">Des solutions concrètes</span>
-            <span className="mt-2 block text-alice-green">
-              pour les Français de l&apos;étranger
-            </span>
+        <Container className="relative pt-8 pb-0 sm:pt-10">
+          <h1 className="animate-fade-up font-display max-w-[16em] text-[1.9rem] font-medium leading-[1.25] tracking-tight text-alice-navy sm:text-[2.35rem] lg:max-w-[15em] lg:text-[2.85rem] lg:leading-[1.22]">
+            Des solutions concrètes
+            <br />
+            pour les Français de l&apos;étranger
           </h1>
-          <p className="animate-fade-up animate-delay-2 mt-5 max-w-2xl text-lg text-alice-muted sm:text-xl">
+          <p className="animate-fade-up animate-delay-1 mt-3 max-w-2xl text-lg leading-relaxed text-alice-muted sm:mt-4">
             Un groupe d&apos;élus à l&apos;Assemblée des Français de
             l&apos;étranger, engagé dans un travail collectif, constructif et
             transparent, au service des conseillers des Français de
@@ -36,7 +31,7 @@ export default function HomePage() {
             width={1417}
             height={757}
             priority
-            className="animate-fade-up animate-delay-3 mt-8 h-auto w-full sm:mt-10"
+            className="animate-fade-up animate-delay-2 mt-5 h-auto w-full sm:mt-6"
           />
 
           <h2 className="sr-only">Sections du site</h2>
