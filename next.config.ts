@@ -40,8 +40,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/representants/geoffroy-bunetel",
-        destination: "/representants/geoffroy-bunelet",
+        source: "/representants/geoffroy-bunelet",
+        destination: "/representants/geoffroy-bunetel",
         permanent: true,
       },
       {
@@ -55,8 +55,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/elus/geoffroy-bunetel",
-        destination: "/representants/geoffroy-bunelet",
+        source: "/elus/geoffroy-bunelet",
+        destination: "/representants/geoffroy-bunetel",
         permanent: true,
       },
       {
