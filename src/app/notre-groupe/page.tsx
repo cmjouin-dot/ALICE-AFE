@@ -1,10 +1,44 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
-import { elus } from "@/data/elus";
+import { elus, type Elu } from "@/data/elus";
 import { principes } from "@/data/principes";
 import { siteConfig } from "@/data/site";
+
+function initials(name: string) {
+  const parts = name.split(/\s+/).filter(Boolean);
+  const first = parts[0]?.[0] ?? "";
+  const last = parts.length > 1 ? parts[parts.length - 1]?.[0] ?? "" : "";
+  return `${first}${last}`.toLocaleUpperCase("fr");
+}
+
+function MemberPortrait({ elu }: { elu: Elu }) {
+  if (!elu.photo) {
+    return (
+      <span
+        className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-alice-gray text-sm font-semibold text-alice-navy"
+        aria-hidden
+      >
+        {initials(elu.displayName)}
+      </span>
+    );
+  }
+
+  return (
+    <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-alice-gray">
+      <Image
+        src={elu.photo}
+        alt=""
+        width={56}
+        height={56}
+        className="h-full w-full object-cover"
+        style={{ objectPosition: elu.photoPosition }}
+      />
+    </span>
+  );
+}
 
 export const metadata: Metadata = {
   title: "Notre groupe",
@@ -47,14 +81,15 @@ export default function NotreGroupePage() {
             >
               Les membres
             </h2>
-            <ul className="mt-6 grid gap-x-8 sm:grid-cols-2">
+            <ul className="mt-6 grid grid-cols-1 gap-x-8 sm:grid-cols-2">
               {elus.map((elu) => (
                 <li key={elu.slug} className="border-t border-alice-border">
                   <Link
                     href={`/representants/${elu.slug}`}
-                    className="block py-3 font-medium text-alice-navy underline-offset-4 hover:text-alice-blue hover:underline"
+                    className="flex items-center gap-3 py-3 font-medium text-alice-navy underline-offset-4 hover:text-alice-blue"
                   >
-                    {elu.displayName}
+                    <MemberPortrait elu={elu} />
+                    <span className="hover:underline">{elu.displayName}</span>
                   </Link>
                 </li>
               ))}
