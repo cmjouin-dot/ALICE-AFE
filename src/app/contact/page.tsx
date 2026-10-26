@@ -16,10 +16,7 @@ const activation =
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        title="Contactez-nous"
-        description="Deux prises de contact, préparées pour les conseillers des Français de l'étranger et pour toute demande adressée au groupe."
-      />
+      <PageHero title="Contactez-nous" />
 
       <Container className="py-14 sm:py-16">
         <div className="mx-auto max-w-2xl space-y-16">
