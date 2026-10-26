@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
@@ -16,8 +17,11 @@ export default function HomePage() {
           <div className="animate-fade-up">
             <Logo size="hero" priority />
           </div>
-          <h1 className="animate-fade-up animate-delay-1 font-display mt-8 max-w-3xl text-4xl font-medium leading-[1.15] tracking-tight text-alice-navy sm:text-5xl lg:text-[3.25rem]">
-            ALICE — Ensemble, au service des Français de l&apos;étranger
+          <h1 className="animate-fade-up animate-delay-1 font-display mt-8 max-w-4xl text-4xl font-medium leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
+            <span className="block text-alice-navy">Des solutions concrètes</span>
+            <span className="mt-2 block text-alice-green">
+              pour les Français de l&apos;étranger
+            </span>
           </h1>
           <p className="animate-fade-up animate-delay-2 mt-5 max-w-2xl text-lg text-alice-muted sm:text-xl">
             Un groupe d&apos;élus à l&apos;Assemblée des Français de
@@ -25,6 +29,15 @@ export default function HomePage() {
             transparent, au service des conseillers des Français de
             l&apos;étranger et des communautés qu&apos;ils représentent.
           </p>
+
+          <Image
+            src="/images/hero-eiffel.png"
+            alt="La Tour Eiffel et les quais de la Seine, sous un arc vert et bleu."
+            width={1417}
+            height={757}
+            priority
+            className="animate-fade-up animate-delay-3 mt-8 h-auto w-full sm:mt-10"
+          />
 
           <h2 className="sr-only">Sections du site</h2>
           <ul className="animate-fade-up animate-delay-3 mt-8 border-t border-alice-border sm:mt-10">
