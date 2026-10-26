@@ -57,12 +57,12 @@ export function Footer() {
                 </li>
               ))}
               <li>
-                <Link
-                  href="/contact"
+                <a
+                  href={`mailto:${siteConfig.email}`}
                   className="text-sm text-white/80 transition-colors hover:text-white"
                 >
-                  Contact
-                </Link>
+                  {siteConfig.email}
+                </a>
               </li>
             </ul>
           </div>

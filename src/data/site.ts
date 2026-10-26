@@ -5,9 +5,9 @@ export const siteConfig = {
   shortDescription:
     "Groupe d'élus à l'Assemblée des Français de l'étranger",
   tagline:
-    "Des élus engagés, une méthode collective, des résultats concrets pour les Français de l'étranger.",
+    "Au service des conseillers des Français de l'étranger et des communautés qu'ils représentent.",
   description:
-    "ALICE rassemble des élus de l'Assemblée des Français de l'étranger autour d'une méthode de travail fondée sur le dialogue, la collégialité et la recherche de solutions concrètes.",
+    "Groupe d'élus à l'Assemblée des Français de l'étranger. Les conseillers des Français de l'étranger peuvent y suivre le travail d'ALICE, joindre ses membres et leur soumettre une question.",
   email: "contact@alice-afe.fr",
   afeName: "Assemblée des Français de l'étranger",
   afeShort: "AFE",
@@ -15,15 +15,32 @@ export const siteConfig = {
   locale: "fr_FR",
 } as const;
 
-export const navigation = [
-  { href: "/", label: "Accueil" },
-  { href: "/qui-sommes-nous", label: "Qui sommes-nous" },
-  { href: "/engagements", label: "Nos engagements" },
-  { href: "/elus", label: "Nos élus" },
-  { href: "/actions", label: "Nos actions" },
-  { href: "/actualites", label: "Actualités" },
-  { href: "/contact", label: "Contact" },
+export const sections = [
+  {
+    href: "/notre-groupe",
+    label: "Notre groupe",
+    description:
+      "Qui compose ALICE et comment le groupe travaille au sein de l'Assemblée.",
+  },
+  {
+    href: "/representants",
+    label: "Nos représentants à l'AFE",
+    description: "Les élus du groupe et la façon de les solliciter.",
+  },
+  {
+    href: "/priorites",
+    label: "Nos priorités",
+    description: "Les sujets suivis dans les travaux de l'Assemblée.",
+  },
+  {
+    href: "/contact",
+    label: "Contactez-nous",
+    description:
+      "Transmettre une question, une difficulté ou une proposition.",
+  },
 ] as const;
+
+export const navigation = sections.map(({ href, label }) => ({ href, label }));
 
 export const footerLegal = [
   { href: "/mentions-legales", label: "Mentions légales" },

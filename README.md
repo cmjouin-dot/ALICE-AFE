@@ -41,29 +41,30 @@ Aucune base de données, API payante ni authentification n'est requise pour cett
 
 ```
 src/
-  app/           # Routes (Accueil, Convictions, Élus, Actions, Actualités, Contact)
-  components/    # Composants réutilisables (Header, Footer, cartes, etc.)
-  data/          # Contenu éditable (élus, articles, convictions, actions, site)
-public/images/   # Logo et médias (placer alice-logo.png ici le cas échéant)
+  app/           # Accueil, Notre groupe, Représentants, Priorités, Contact
+  components/    # Composants réutilisables (Header, Footer, formulaire, etc.)
+  data/          # Contenu éditable (élus, principes, priorités, site)
+public/images/   # Logo et médias
 ```
+
+Le site s'adresse aux conseillers des Français de l'étranger. Le menu compte quatre sections : Notre groupe, Nos représentants à l'AFE, Nos priorités, Contactez-nous.
 
 ## Édition du contenu
 
 Les textes et listes sont centralisés dans `src/data/` :
 
-| Fichier            | Contenu                                      |
-| ------------------ | -------------------------------------------- |
-| `site.ts`          | Nom, description, e-mail, navigation         |
-| `elus.ts`          | Profils des élus                             |
-| `convictions.ts`   | Principes politiques                         |
-| `actions.ts`       | Présentation des actions (brouillon)         |
-| `actualites.ts`    | Articles (échantillons de démonstration)     |
+| Fichier         | Contenu                                      |
+| --------------- | -------------------------------------------- |
+| `site.ts`       | Nom, description, e-mail, navigation         |
+| `elus.ts`       | Profils des élus                             |
+| `principes.ts`  | Méthode de travail du groupe                 |
+| `priorites.ts`  | Axes de travail (en attente de validation)   |
 
 ## Contenu provisoire
 
-- Les **noms des élus** sont réels ; circonscriptions, responsabilités, photos et biographies restent des **placeholders** clairement marqués.
-- Les **actualités** sont des **contenus de démonstration** (`isDemo: true`), signalés dans l'interface.
-- Les **actions** sont présentées comme **brouillons**, sans réalisations inventées.
+- Les **noms des élus** sont vérifiés. Circonscriptions, commissions, vice-présidences et responsabilités institutionnelles ne sont pas publiées tant qu'elles ne sont pas confirmées.
+- Les **priorités** sont proposées. Aucune n'est marquée comme position adoptée.
+- Les **formulaires** de contact sont préparés dans l'interface et restent inactifs tant qu'un service d'envoi serveur n'est pas branché.
 
 ## Déploiement GitHub → Vercel
 
