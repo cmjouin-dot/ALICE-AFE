@@ -23,12 +23,20 @@ export async function generateMetadata({
   };
 }
 
-function Fact({ label, values }: { label: string; values: string[] }) {
+function Fact({
+  label,
+  values,
+  valueClassName = "text-alice-muted",
+}: {
+  label: string;
+  values: string[];
+  valueClassName?: string;
+}) {
   if (values.length === 0) return null;
   return (
     <div className="border-t border-alice-border py-5">
       <dt className="text-sm font-semibold text-alice-navy">{label}</dt>
-      <dd className="mt-2 text-alice-muted">
+      <dd className={`mt-2 ${valueClassName}`}>
         <ul className="space-y-1">
           {values.map((value) => (
             <li key={value}>{value}</li>
@@ -86,6 +94,11 @@ export default async function RepresentantPage({
               <Fact
                 label="Responsabilité au sein du groupe ALICE"
                 values={elu.roleAlice ? [elu.roleAlice] : []}
+                valueClassName={
+                  elu.roleAlice === "Représentante ALICE au dispositif STAFE"
+                    ? "text-black"
+                    : "text-alice-muted"
+                }
               />
               <Fact
                 label="Fonctions et mandats au sein de l'AFE"
