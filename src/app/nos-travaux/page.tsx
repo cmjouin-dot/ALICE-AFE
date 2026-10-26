@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 const documentHref = "/documents/alice-communique-45e-session.pdf";
 
 const sessionDocument = {
-  title: "Bilan de la 45e session de l'AFE",
+  title: "Communiqué ALICE n°1 — Bilan de la 45e session de l'AFE",
   type: "Communiqué du groupe ALICE",
-  date: "Octobre 2026",
+  date: "26 octobre 2026",
   description:
-    "Retour sur la 45e session de l'Assemblée des Français de l'étranger, tenue à Paris du 12 au 16 octobre 2026 : constitution du groupe ALICE, installation des instances, positions du groupe et principales annonces concernant les Français de l'étranger.",
+    "À l'issue de la 45e session de l'Assemblée des Français de l'étranger, le groupe ALICE revient sur sa création, l'installation des instances, les principales annonces de la session et ses prochains rendez-vous.",
   href: documentHref,
 };
 
