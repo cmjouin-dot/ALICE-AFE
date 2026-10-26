@@ -12,7 +12,7 @@ export default function HomePage() {
           className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--alice-green)_0%,var(--alice-blue)_50%,var(--alice-coral)_100%)] opacity-80"
           aria-hidden
         />
-        <Container className="relative py-10 sm:py-14 lg:py-16">
+        <Container className="relative pt-10 pb-0 sm:pt-14 lg:pt-16">
           <div className="animate-fade-up">
             <Logo size="hero" priority />
           </div>
@@ -27,39 +27,29 @@ export default function HomePage() {
           </p>
 
           <h2 className="sr-only">Sections du site</h2>
-          <ul className="animate-fade-up animate-delay-3 mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:gap-5">
+          <ul className="animate-fade-up animate-delay-3 mt-8 border-t border-alice-border sm:mt-10">
             {sections.map((section, index) => (
-              <li
-                key={section.href}
-                className={
-                  index < 3
-                    ? "lg:col-span-2"
-                    : index === 3
-                      ? "lg:col-span-2 lg:col-start-2"
-                      : "sm:max-lg:col-span-2 sm:max-lg:mx-auto sm:max-lg:w-full sm:max-lg:max-w-[calc(50%-0.5rem)] lg:col-span-2"
-                }
-              >
+              <li key={section.href} className="border-b border-alice-border">
                 <Link
                   href={section.href}
-                  className="group flex h-full flex-col border border-alice-border bg-white p-6 transition-colors hover:border-alice-blue"
+                  className="group grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-x-3 py-4 transition-colors hover:bg-alice-gray sm:gap-x-5 sm:py-5"
                 >
-                  <p className="text-xs font-semibold tracking-[0.18em] text-alice-green">
+                  <span className="text-xs font-semibold tracking-[0.16em] text-alice-green">
                     {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="font-display mt-4 text-2xl font-medium leading-snug text-alice-navy transition-colors group-hover:text-alice-blue">
-                    {section.label}
-                  </h3>
-                  <p className="mt-3 flex-1 text-alice-muted">
-                    {section.description}
-                  </p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-alice-blue">
-                    Consulter
-                    <ArrowRight
-                      size={16}
-                      className="transition-transform group-hover:translate-x-0.5"
-                      aria-hidden
-                    />
                   </span>
+                  <span className="min-w-0 md:grid md:grid-cols-[17.5rem_minmax(0,1fr)] md:items-baseline md:gap-8 lg:grid-cols-[22rem_minmax(0,1fr)]">
+                    <span className="font-display block text-xl font-medium leading-snug text-alice-navy sm:text-2xl">
+                      {section.label}
+                    </span>
+                    <span className="mt-1 block text-sm leading-relaxed text-alice-muted md:mt-0 md:text-base">
+                      {section.description}
+                    </span>
+                  </span>
+                  <ArrowRight
+                    size={18}
+                    className="text-alice-navy/70 transition-transform group-hover:translate-x-0.5 group-hover:text-alice-navy"
+                    aria-hidden
+                  />
                 </Link>
               </li>
             ))}
@@ -81,9 +71,10 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-lg text-white/75">
               Vous êtes conseiller des Français de l&apos;étranger et souhaitez
-              faire remonter une question, une difficulté ou une proposition ?
-              Les élus du groupe ALICE peuvent contribuer à relayer vos
-              préoccupations dans le cadre des travaux de l&apos;Assemblée.
+              faire remonter une question, une difficulté ou une proposition à
+              l&apos;Assemblée ? Les élus ALICE peuvent relayer vos
+              préoccupations et contribuer à les porter dans les travaux de
+              l&apos;AFE.
             </p>
             <div className="mt-6">
               <Link
