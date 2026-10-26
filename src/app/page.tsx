@@ -27,9 +27,18 @@ export default function HomePage() {
           </p>
 
           <h2 className="sr-only">Sections du site</h2>
-          <ul className="animate-fade-up animate-delay-3 mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <ul className="animate-fade-up animate-delay-3 mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:gap-5">
             {sections.map((section, index) => (
-              <li key={section.href}>
+              <li
+                key={section.href}
+                className={
+                  index < 3
+                    ? "lg:col-span-2"
+                    : index === 3
+                      ? "lg:col-span-2 lg:col-start-2"
+                      : "sm:max-lg:col-span-2 sm:max-lg:mx-auto sm:max-lg:w-full sm:max-lg:max-w-[calc(50%-0.5rem)] lg:col-span-2"
+                }
+              >
                 <Link
                   href={section.href}
                   className="group flex h-full flex-col border border-alice-border bg-white p-6 transition-colors hover:border-alice-blue"

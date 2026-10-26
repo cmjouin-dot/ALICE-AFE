@@ -20,7 +20,7 @@ export const sections = [
     href: "/notre-groupe",
     label: "Notre groupe",
     description:
-      "Qui compose ALICE et comment le groupe travaille au sein de l'Assemblée.",
+      "Découvrez ce qui nous rassemble, nos engagements et nos principes d'action au sein de l'Assemblée.",
   },
   {
     href: "/representants",
@@ -33,6 +33,12 @@ export const sections = [
     description: "Les sujets suivis dans les travaux de l'Assemblée.",
   },
   {
+    href: "/nos-travaux",
+    label: "Nos travaux",
+    description:
+      "Rapports, comptes rendus et interventions de nos élus à l'Assemblée.",
+  },
+  {
     href: "/contact",
     label: "Contactez-nous",
     description:
@@ -40,13 +46,7 @@ export const sections = [
   },
 ] as const;
 
-const sectionNavigation = sections.map(({ href, label }) => ({ href, label }));
-
-export const navigation = [
-  ...sectionNavigation.slice(0, 3),
-  { href: "/nos-travaux", label: "Nos travaux" },
-  ...sectionNavigation.slice(3),
-];
+export const navigation = sections.map(({ href, label }) => ({ href, label }));
 
 export const footerLegal = [
   { href: "/mentions-legales", label: "Mentions légales" },
