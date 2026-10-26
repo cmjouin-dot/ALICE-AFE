@@ -32,7 +32,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-alice-border/80 bg-white/95 backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between gap-4 sm:h-[4.25rem]">
+      <Container className="flex h-[4.75rem] items-center justify-between gap-6 sm:h-[5.5rem]">
         <Logo priority={pathname === "/"} className="shrink-0" />
 
         <nav

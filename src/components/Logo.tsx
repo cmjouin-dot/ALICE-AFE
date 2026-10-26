@@ -14,9 +14,10 @@ const sizeConfig: Record<
   { width: number; height: number; className: string }
 > = {
   header: {
-    width: 148,
-    height: 99,
-    className: "h-9 w-auto max-h-9 sm:h-10 sm:max-h-10",
+    width: 222,
+    height: 148,
+    className:
+      "h-[3.375rem] w-auto max-h-[3.375rem] sm:h-[3.75rem] sm:max-h-[3.75rem]",
   },
   hero: {
     width: 390,
@@ -44,6 +45,7 @@ export function Logo({
         width={config.width}
         height={config.height}
         priority={priority}
+        sizes={size === "header" ? "(min-width: 640px) 90px, 81px" : undefined}
         className={`${config.className} object-contain`}
       />
     </Link>

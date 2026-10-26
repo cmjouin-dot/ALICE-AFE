@@ -34,8 +34,8 @@ export default function MentionsLegalesPage() {
                 className="font-semibold text-alice-blue underline-offset-4 hover:underline"
               >
                 {siteConfig.email}
-              </a>{" "}
-              (adresse provisoire).
+              </a>
+              .
             </p>
           </section>
 
