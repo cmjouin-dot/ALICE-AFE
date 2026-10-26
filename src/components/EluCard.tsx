@@ -39,7 +39,13 @@ export function EluCard({ elu }: EluCardProps) {
             {elu.displayName}
           </h2>
           {elu.roleAlice ? (
-            <p className="mt-2 text-sm font-semibold text-alice-blue">
+            <p
+              className={`mt-2 text-sm font-semibold ${
+                elu.roleAlice === "Représentante ALICE au dispositif STAFE"
+                  ? "text-black"
+                  : "text-alice-blue"
+              }`}
+            >
               {elu.roleAlice}
             </p>
           ) : null}
