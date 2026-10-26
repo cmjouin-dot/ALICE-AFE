@@ -1,44 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
-import { elus, type Elu } from "@/data/elus";
 import { principes } from "@/data/principes";
 import { siteConfig } from "@/data/site";
-
-function initials(name: string) {
-  const parts = name.split(/\s+/).filter(Boolean);
-  const first = parts[0]?.[0] ?? "";
-  const last = parts.length > 1 ? parts[parts.length - 1]?.[0] ?? "" : "";
-  return `${first}${last}`.toLocaleUpperCase("fr");
-}
-
-function MemberPortrait({ elu }: { elu: Elu }) {
-  if (!elu.photo) {
-    return (
-      <span
-        className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-alice-gray text-sm font-semibold text-alice-navy"
-        aria-hidden
-      >
-        {initials(elu.displayName)}
-      </span>
-    );
-  }
-
-  return (
-    <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-alice-gray">
-      <Image
-        src={elu.photo}
-        alt=""
-        width={56}
-        height={56}
-        className="h-full w-full object-cover"
-        style={{ objectPosition: elu.photoPosition }}
-      />
-    </span>
-  );
-}
 
 export const metadata: Metadata = {
   title: "Notre groupe",
@@ -48,10 +13,7 @@ export const metadata: Metadata = {
 export default function NotreGroupePage() {
   return (
     <>
-      <PageHero
-        title="Notre groupe"
-        description={siteConfig.fullName}
-      />
+      <PageHero title="Notre groupe" description={siteConfig.fullName} />
 
       <Container className="py-14 sm:py-16">
         <div className="mx-auto max-w-3xl">
@@ -67,36 +29,14 @@ export default function NotreGroupePage() {
               travail collectif, sans exiger que chacun partage la même position
               sur tous les sujets.
             </p>
-            <p>
+            <p className="font-medium text-alice-navy">
               Au sein de l&apos;Assemblée, notre façon de travailler repose sur
               les principes suivants. Ils décrivent une méthode, et non un
               manifeste.
             </p>
           </div>
 
-          <section className="mt-12" aria-labelledby="membres-du-groupe">
-            <h2
-              id="membres-du-groupe"
-              className="font-display text-3xl font-medium tracking-tight text-alice-navy"
-            >
-              Les membres
-            </h2>
-            <ul className="mt-6 grid grid-cols-1 gap-x-8 sm:grid-cols-2">
-              {elus.map((elu) => (
-                <li key={elu.slug} className="border-t border-alice-border">
-                  <Link
-                    href={`/representants/${elu.slug}`}
-                    className="flex items-center gap-3 py-3 font-medium text-alice-navy underline-offset-4 hover:text-alice-blue"
-                  >
-                    <MemberPortrait elu={elu} />
-                    <span className="hover:underline">{elu.displayName}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <h2 className="font-display mt-14 text-3xl font-medium tracking-tight text-alice-navy">
+          <h2 className="font-display mt-12 text-3xl font-medium tracking-tight text-alice-navy">
             Principes d&apos;action
           </h2>
           <ol className="mt-8 grid gap-8 sm:grid-cols-2">
