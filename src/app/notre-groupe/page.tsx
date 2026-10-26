@@ -19,20 +19,32 @@ export default function NotreGroupePage() {
         <div className="mx-auto max-w-3xl">
           <div className="space-y-5 text-lg leading-relaxed text-alice-muted">
             <p>
-              ALICE rassemble des élus siégeant à l&apos;{siteConfig.afeName}.
-              Le groupe est un cadre de travail pour contribuer aux délibérations
-              de l&apos;Assemblée.
+              ALICE – Alliance des Libéraux, Indépendants et Centristes de
+              l&apos;Étranger rassemble des élus issus de diverses sensibilités
+              du centre et de la droite républicaine, unis par leur volonté de
+              servir les Français de l&apos;étranger.
             </p>
             <p>
-              Ses membres ont des expériences, des ancrages géographiques et des
-              sensibilités politiques différents. Cette diversité nourrit le
-              travail collectif, sans exiger que chacun partage la même position
-              sur tous les sujets.
+              Fidèles aux valeurs républicaines, libérales, humanistes et
+              européennes, nous défendons une politique de responsabilité, de
+              solidarité et de progrès.
             </p>
-            <p className="font-medium text-alice-navy">
-              Au sein de l&apos;Assemblée, notre façon de travailler repose sur
-              les principes suivants. Ils décrivent une méthode, et non un
-              manifeste.
+            <p>
+              Notre démarche repose sur l&apos;écoute du terrain, le dialogue
+              avec les conseillers des Français de l&apos;étranger et la
+              recherche de solutions concrètes, loin des logiques d&apos;appareil
+              et des clivages partisans.
+            </p>
+            <p>
+              Au sein de l&apos;Assemblée des Français de l&apos;étranger, nous
+              entendons travailler avec toutes celles et tous ceux qui
+              souhaitent faire avancer les dossiers, dans un esprit constructif,
+              indépendant et respectueux de la diversité des opinions.
+            </p>
+            <p className="text-alice-navy">
+              Notre ambition est simple : privilégier le travail collectif, la
+              constance et les résultats au service des Français de
+              l&apos;étranger.
             </p>
           </div>
 

@@ -40,7 +40,13 @@ export const sections = [
   },
 ] as const;
 
-export const navigation = sections.map(({ href, label }) => ({ href, label }));
+const sectionNavigation = sections.map(({ href, label }) => ({ href, label }));
+
+export const navigation = [
+  ...sectionNavigation.slice(0, 3),
+  { href: "/nos-travaux", label: "Nos travaux" },
+  ...sectionNavigation.slice(3),
+];
 
 export const footerLegal = [
   { href: "/mentions-legales", label: "Mentions légales" },
