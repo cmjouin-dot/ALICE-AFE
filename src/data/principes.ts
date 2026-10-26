@@ -22,27 +22,27 @@ export const principes: Principe[] = [
       "Préparer les décisions ensemble et partager les responsabilités.",
   },
   {
-    id: "transparence",
-    title: "Transparence",
+    id: "travail-constructif",
+    title: "Travail avec tous et esprit constructif",
     summary:
-      "Rendre compte des travaux et expliquer les positions lorsqu'elles sont arrêtées.",
+      "Travailler avec l'ensemble des groupes, dans un esprit constructif, et rechercher des solutions applicables.",
   },
   {
-    id: "dialogue-constructif",
-    title: "Dialogue constructif",
-    summary:
-      "Travailler avec l'ensemble des groupes et rechercher des solutions applicables.",
-  },
-  {
-    id: "respect-minorites",
-    title: "Respect des minorités",
+    id: "respect-opposition",
+    title: "Respect de l'opposition et des minorités",
     summary:
       "Reconnaître la place de l'opposition et des minorités dans le fonctionnement de l'Assemblée.",
   },
   {
-    id: "independance",
-    title: "Indépendance",
+    id: "professionnalisme",
+    title: "Professionnalisme",
     summary:
-      "Préserver la liberté de vote et le jugement propre de chaque élu.",
+      "Appuyer les contributions sur des faits et un travail préparé.",
+  },
+  {
+    id: "transparence",
+    title: "Transparence",
+    summary:
+      "Rendre compte des travaux et expliquer les positions lorsqu'elles sont arrêtées.",
   },
 ];
