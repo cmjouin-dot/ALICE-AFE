@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
-import { elus, getEluBySlug, informationNonVerifiee } from "@/data/elus";
+import { elus, getEluBySlug } from "@/data/elus";
 
 export function generateStaticParams() {
   return elus.map((elu) => ({ slug: elu.slug }));
@@ -24,20 +24,17 @@ export async function generateMetadata({
 }
 
 function Fact({ label, values }: { label: string; values: string[] }) {
+  if (values.length === 0) return null;
   return (
     <div className="border-t border-alice-border py-5">
       <dt className="text-sm font-semibold text-alice-navy">{label}</dt>
-      {values.length > 0 ? (
-        <dd className="mt-2 text-alice-muted">
-          <ul className="space-y-1">
-            {values.map((value) => (
-              <li key={value}>{value}</li>
-            ))}
-          </ul>
-        </dd>
-      ) : (
-        <dd className="mt-2 text-alice-muted">{informationNonVerifiee}</dd>
-      )}
+      <dd className="mt-2 text-alice-muted">
+        <ul className="space-y-1">
+          {values.map((value) => (
+            <li key={value}>{value}</li>
+          ))}
+        </ul>
+      </dd>
     </div>
   );
 }
@@ -64,17 +61,17 @@ export default async function RepresentantPage({
       <Container className="py-10 sm:py-14">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            {elu.photo ? (
+            <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-alice-gray">
               <Image
                 src={elu.photo}
                 alt={`Portrait de ${elu.displayName}`}
-                width={480}
-                height={600}
-                className="aspect-[4/5] w-full object-cover"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 320px"
+                className="object-cover"
+                style={{ objectPosition: elu.photoPosition }}
               />
-            ) : (
-              <p className="text-sm text-alice-muted">Photographie non fournie.</p>
-            )}
+            </div>
           </div>
 
           <div className="lg:col-span-8">
@@ -84,23 +81,33 @@ export default async function RepresentantPage({
             <h1 className="font-display mt-4 text-4xl font-medium tracking-tight text-alice-navy sm:text-5xl">
               {elu.displayName}
             </h1>
-            <p className="mt-4 text-lg text-alice-muted">
-              Membre du groupe à l&apos;Assemblée des Français de
-              l&apos;étranger.
-            </p>
 
             <dl className="mt-10">
               <Fact
-                label="Circonscription"
-                values={elu.circonscription ? [elu.circonscription] : []}
+                label="Responsabilité au sein du groupe ALICE"
+                values={elu.roleAlice ? [elu.roleAlice] : []}
               />
-              <Fact label="Commissions" values={elu.commissions} />
-              <Fact label="Vice-présidences" values={elu.vicePresidences} />
               <Fact
-                label="Responsabilités institutionnelles"
-                values={elu.responsabilites}
+                label="Fonctions et mandats au sein de l'AFE"
+                values={elu.fonctionsAfe}
+              />
+              <Fact label="Commission" values={elu.commissions} />
+              <Fact
+                label="Circonscription"
+                values={[elu.circonscription ?? "À confirmer"]}
               />
             </dl>
+
+            {elu.email ? (
+              <p className="mt-6">
+                <a
+                  href={`mailto:${elu.email}`}
+                  className="font-semibold text-alice-blue underline-offset-4 hover:underline"
+                >
+                  {elu.email}
+                </a>
+              </p>
+            ) : null}
 
             <div className="mt-10">
               <Button href="/contact#porter-votre-voix">

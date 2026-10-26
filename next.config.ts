@@ -35,6 +35,36 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/representants/stephanie-le-vailant-vignancour",
+        destination: "/representants/stephanie-le-vaillant-vignancour",
+        permanent: true,
+      },
+      {
+        source: "/representants/geoffroy-bunetel",
+        destination: "/representants/geoffroy-bunelet",
+        permanent: true,
+      },
+      {
+        source: "/representants/frederic-shauli",
+        destination: "/representants/frederic-schauli",
+        permanent: true,
+      },
+      {
+        source: "/elus/stephanie-le-vailant-vignancour",
+        destination: "/representants/stephanie-le-vaillant-vignancour",
+        permanent: true,
+      },
+      {
+        source: "/elus/geoffroy-bunetel",
+        destination: "/representants/geoffroy-bunelet",
+        permanent: true,
+      },
+      {
+        source: "/elus/frederic-shauli",
+        destination: "/representants/frederic-schauli",
+        permanent: true,
+      },
+      {
         source: "/elus/:slug",
         destination: "/representants/:slug",
         permanent: true,
