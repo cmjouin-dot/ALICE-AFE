@@ -84,7 +84,7 @@ export default function NotreGroupePage() {
             >
               Porter votre voix à l&apos;AFE
             </Link>
-            . L&apos;envoi n&apos;est pas encore activé.
+            .
           </p>
         </div>
       </Container>
