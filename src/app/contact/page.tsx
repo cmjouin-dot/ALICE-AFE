@@ -10,9 +10,6 @@ export const metadata: Metadata = {
     "Contacter le groupe ALICE ou préparer une question à porter à l'Assemblée des Français de l'étranger.",
 };
 
-const activation =
-  "Pour activer l'envoi, il faut l'adresse officielle qui recevra les messages, un service d'envoi côté serveur (messagerie transactionnelle ou SMTP), et une action serveur Next.js qui valide les champs puis transmet le message. Les mentions légales devront alors préciser la conservation des données. Tant que ce branchement n'est pas en place, les champs restent inactifs et aucun message n'est envoyé.";
-
 export default function ContactPage() {
   return (
     <>
@@ -20,10 +17,6 @@ export default function ContactPage() {
 
       <Container className="py-14 sm:py-16">
         <div className="mx-auto max-w-2xl space-y-16">
-          <p className="border-l-2 border-alice-coral pl-4 text-sm leading-relaxed text-alice-muted">
-            {activation}
-          </p>
-
           <section aria-labelledby="contact-general-titre">
             <h2
               id="contact-general-titre"
