@@ -96,7 +96,7 @@ export default async function RepresentantPage({
                 values={elu.roleAlice ? [elu.roleAlice] : []}
                 valueClassName={
                   elu.roleAlice === "Représentante ALICE au dispositif STAFE"
-                    ? "text-black"
+                    ? "font-normal text-black"
                     : "text-alice-muted"
                 }
               />
