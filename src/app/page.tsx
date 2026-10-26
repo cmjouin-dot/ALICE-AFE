@@ -12,27 +12,29 @@ export default function HomePage() {
           className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--alice-green)_0%,var(--alice-blue)_50%,var(--alice-coral)_100%)] opacity-80"
           aria-hidden
         />
-        <Container className="relative pt-8 pb-0 sm:pt-10">
-          <h1 className="animate-fade-up font-display max-w-[16em] text-[1.9rem] font-medium leading-[1.25] tracking-tight text-alice-navy sm:text-[2.35rem] lg:max-w-[15em] lg:text-[2.85rem] lg:leading-[1.22]">
-            Des solutions concrètes
-            <br />
-            pour les Français de l&apos;étranger
-          </h1>
-          <p className="animate-fade-up animate-delay-1 mt-3 max-w-2xl text-lg leading-relaxed text-alice-muted sm:mt-4">
-            Un groupe d&apos;élus à l&apos;Assemblée des Français de
-            l&apos;étranger, engagé dans un travail collectif, constructif et
-            transparent, au service des conseillers des Français de
-            l&apos;étranger et des communautés qu&apos;ils représentent.
-          </p>
-
-          <Image
-            src="/images/hero-eiffel.png"
-            alt="La Tour Eiffel et les quais de la Seine, sous un arc vert et bleu."
-            width={1417}
-            height={757}
-            priority
-            className="animate-fade-up animate-delay-2 mt-5 h-auto w-full sm:mt-6"
-          />
+        <Container className="relative pt-16 pb-0">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,45fr)_minmax(0,55fr)] lg:gap-16">
+            <div>
+              <h1 className="animate-fade-up font-display text-[2rem] font-medium leading-[1.2] tracking-tight text-alice-navy sm:text-[2.35rem] lg:text-[3rem] lg:leading-[1.2] lg:tracking-[-0.03em]">
+                Des solutions concrètes pour les Français de l&apos;étranger
+              </h1>
+              <p className="animate-fade-up animate-delay-1 mt-6 max-w-prose text-[1.0625rem] leading-relaxed text-alice-muted lg:text-[1.125rem]">
+                Un groupe d&apos;élus à l&apos;Assemblée des Français de
+                l&apos;étranger, engagé dans un travail collectif, constructif
+                et transparent, au service des conseillers des Français de
+                l&apos;étranger et des communautés qu&apos;ils représentent.
+              </p>
+            </div>
+            <Image
+              src="/images/hero-eiffel.png"
+              alt="La Tour Eiffel et les quais de la Seine, sous un arc vert et bleu."
+              width={1417}
+              height={757}
+              priority
+              sizes="(min-width: 1024px) 600px, 100vw"
+              className="animate-fade-up animate-delay-2 h-auto w-full"
+            />
+          </div>
 
           <h2 className="sr-only">Sections du site</h2>
           <ul className="animate-fade-up animate-delay-3 mt-8 border-t border-alice-border sm:mt-10">
