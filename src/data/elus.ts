@@ -105,8 +105,8 @@ export const elus: Elu[] = [
     email: null,
   },
   {
-    slug: "geoffroy-bunelet",
-    displayName: "Geoffroy Bunelet",
+    slug: "geoffroy-bunetel",
+    displayName: "Geoffroy Bunetel",
     photo: "/images/members/geoffroy-bunelet.jpg",
     photoPosition: "center 30%",
     roleAlice: null,
