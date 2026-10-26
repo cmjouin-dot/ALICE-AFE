@@ -3,17 +3,19 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
 import { principes } from "@/data/principes";
-import { siteConfig } from "@/data/site";
+
+const groupName =
+  "Alliance des Libéraux, Indépendants et Centristes de l'Étranger";
 
 export const metadata: Metadata = {
   title: "Notre groupe",
-  description: `${siteConfig.fullName}. Groupe d'élus au sein de l'Assemblée des Français de l'étranger.`,
+  description: `${groupName}. Groupe d'élus au sein de l'Assemblée des Français de l'étranger.`,
 };
 
 export default function NotreGroupePage() {
   return (
     <>
-      <PageHero title="Notre groupe" description={siteConfig.fullName} />
+      <PageHero title="Notre groupe" description={groupName} />
 
       <Container className="py-14 sm:py-16">
         <div className="mx-auto max-w-3xl">
