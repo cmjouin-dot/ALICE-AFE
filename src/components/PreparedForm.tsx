@@ -125,20 +125,16 @@ export function PreparedForm({ id, fields }: PreparedFormProps) {
             Confidentialité de vos échanges
           </p>
           <p className="mt-1">
-            Pour protéger vos données personnelles, merci de ne pas transmettre
-            de documents confidentiels, d&apos;informations sensibles ou de
-            données personnelles concernant des tiers via ce formulaire.
-          </p>
-          <p className="mt-2">
-            Pour toute demande nécessitant un échange confidentiel,
-            contactez-nous directement à{" "}
+            Pour toute demande nécessitant un échange confidentiel, vous pouvez
+            contacter directement notre représentant à l&apos;adresse{" "}
             <a
               href={`mailto:${siteConfig.email}`}
               className="font-semibold text-alice-blue underline-offset-4 hover:underline"
             >
               {siteConfig.email}
             </a>
-            .
+            . Merci de ne pas transmettre de documents sensibles via ce
+            formulaire.
           </p>
         </div>
       </div>

@@ -28,14 +28,6 @@ export default function ContactPage() {
               Pour une demande d&apos;information sur le groupe, ses élus ou ses
               travaux à l&apos;{siteConfig.afeName}.
             </p>
-            <p className="mt-4">
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="font-semibold text-alice-blue underline-offset-4 hover:underline"
-              >
-                {siteConfig.email}
-              </a>
-            </p>
             <div className="mt-8">
               <PreparedForm
                 id="contact-general"
