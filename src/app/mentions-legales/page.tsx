@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
 import { siteConfig } from "@/data/site";
@@ -37,6 +38,18 @@ export default function MentionsLegalesPage() {
               </a>
               .
             </p>
+            <p>
+              La forme juridique et l&apos;adresse postale de l&apos;éditeur ne
+              sont pas publiées : elles restent à confirmer. Le responsable du
+              traitement des données personnelles est désigné dans la{" "}
+              <Link
+                href="/politique-de-confidentialite"
+                className="font-semibold text-alice-blue underline-offset-4 hover:underline"
+              >
+                politique de confidentialité
+              </Link>
+              .
+            </p>
           </section>
 
           <section>
@@ -51,8 +64,11 @@ export default function MentionsLegalesPage() {
           <section>
             <h2>Hébergement</h2>
             <p>
-              [À compléter] Préciser ici l&apos;hébergeur (par exemple Vercel)
-              lors du déploiement en production.
+              Le site est hébergé par Vercel Inc., 440 N Barranca Avenue #4133,
+              Covina, CA 91723, États-Unis. Cette adresse est celle que Vercel
+              publie pour les demandes relatives à la protection des données.
+              Le contrat applicable à ce site, et les garanties qu&apos;il
+              prévoit pour d&apos;éventuels transferts, restent à confirmer.
             </p>
           </section>
 
@@ -68,11 +84,26 @@ export default function MentionsLegalesPage() {
           <section>
             <h2>Données personnelles</h2>
             <p>
-              Les messages envoyés depuis les formulaires de contact sont
+              Les formulaires collectent le nom, l&apos;adresse électronique,
+              l&apos;objet et le message. La circonscription n&apos;est
+              recueillie que si la personne la renseigne. Les messages sont
               transmis par courriel à {siteConfig.email}, par
-              l&apos;intermédiaire du prestataire Resend. Ils ne sont pas
-              enregistrés dans une base de données du site. Le formulaire
-              n&apos;accepte pas de pièce jointe.
+              l&apos;intermédiaire de Resend. Le site ne les enregistre pas
+              dans une base de données et n&apos;accepte pas de pièce jointe.
+            </p>
+            <p>
+              Les messages reçus sont conservés pendant une durée maximale de
+              12 mois après le dernier échange, sauf nécessité justifiée de
+              suivi ou obligation légale de conservation. Ils peuvent demeurer
+              dans la boîte du destinataire. Aucun dispositif du site ne les
+              supprime automatiquement. Le détail figure dans la{" "}
+              <Link
+                href="/politique-de-confidentialite"
+                className="font-semibold text-alice-blue underline-offset-4 hover:underline"
+              >
+                politique de confidentialité
+              </Link>
+              .
             </p>
           </section>
         </div>

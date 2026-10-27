@@ -50,4 +50,8 @@ export const navigation = sections.map(({ href, label }) => ({ href, label }));
 
 export const footerLegal = [
   { href: "/mentions-legales", label: "Mentions légales" },
+  {
+    href: "/politique-de-confidentialite",
+    label: "Politique de confidentialité",
+  },
 ] as const;
