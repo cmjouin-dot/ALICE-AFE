@@ -39,14 +39,14 @@ export default function HomePage() {
               </a>
             </div>
             <Image
-              src="/images/hero-groupe.jpg"
-              alt="Photo de groupe des élus à l'Assemblée des Français de l'étranger"
+              src="/images/hero-afe-45e.jpg"
+              alt="Photo des élus de l'Assemblée des Français de l'étranger lors de la 45e session, octobre 2026"
               width={1417}
               height={757}
               priority
               sizes="(min-width: 1024px) 600px, 100vw"
               className="animate-fade-up animate-delay-2 aspect-[1417/757] h-auto w-full object-cover"
-              style={{ objectPosition: "center 22%" }}
+              style={{ objectPosition: "center 50%" }}
             />
           </div>
 
