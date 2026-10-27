@@ -2,6 +2,7 @@
 
 import { Info } from "lucide-react";
 import { useActionState } from "react";
+import Link from "next/link";
 import { sendContactMessage } from "@/app/contact/actions";
 import { CONTACT_LIMITS } from "@/lib/contact-validation";
 import { siteConfig } from "@/data/site";
@@ -135,6 +136,25 @@ export function PreparedForm({ id, fields }: PreparedFormProps) {
             </a>
             . Merci de ne pas transmettre de documents sensibles via ce
             formulaire.
+          </p>
+          <p className="mt-2">
+            Les informations transmises via ce formulaire sont utilisées
+            exclusivement pour traiter votre demande et vous répondre. Elles
+            sont accessibles aux seuls représentants habilités du groupe ALICE
+            et à ses prestataires techniques, dans la limite de leurs missions.
+            Elles ne sont pas utilisées à des fins de prospection politique
+            sans votre accord.
+          </p>
+          <p className="mt-2">
+            Pour en savoir plus sur le traitement de vos données et
+            l&apos;exercice de vos droits, consultez notre{" "}
+            <Link
+              href="/politique-de-confidentialite"
+              className="font-semibold text-alice-blue underline-offset-4 hover:underline"
+            >
+              Politique de confidentialité
+            </Link>
+            .
           </p>
         </div>
       </div>
