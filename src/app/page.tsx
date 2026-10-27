@@ -26,13 +26,14 @@ export default function HomePage() {
               </p>
             </div>
             <Image
-              src="/images/hero-eiffel.png"
-              alt="La Tour Eiffel et les quais de la Seine, sous un arc vert et bleu."
+              src="/images/hero-groupe.jpg"
+              alt="Photo de groupe des élus à l'Assemblée des Français de l'étranger"
               width={1417}
               height={757}
               priority
               sizes="(min-width: 1024px) 600px, 100vw"
-              className="animate-fade-up animate-delay-2 h-auto w-full"
+              className="animate-fade-up animate-delay-2 aspect-[1417/757] h-auto w-full object-cover"
+              style={{ objectPosition: "center 22%" }}
             />
           </div>
 
