@@ -139,15 +139,22 @@ export function PreparedForm({ id, fields }: PreparedFormProps) {
           </p>
           <p className="mt-2">
             Les informations transmises via ce formulaire sont utilisées
-            exclusivement pour traiter votre demande et vous répondre. Elles
-            sont accessibles aux seuls représentants habilités du groupe ALICE
-            et à ses prestataires techniques, dans la limite de leurs missions.
-            Elles ne sont pas utilisées à des fins de prospection politique
-            sans votre accord.
+            uniquement pour permettre aux élus du groupe ALICE de répondre à
+            votre demande, dans le cadre de leur mandat de conseiller des
+            Français de l&apos;étranger.
           </p>
           <p className="mt-2">
-            Pour en savoir plus sur le traitement de vos données et
-            l&apos;exercice de vos droits, consultez notre{" "}
+            Le site ne constitue aucune base de données de contacts. Les
+            messages sont transmis par courrier électronique aux représentants
+            habilités du groupe.
+          </p>
+          <p className="mt-2">
+            Vos coordonnées ne sont utilisées ni à des fins commerciales, ni
+            pour constituer un fichier de sympathisants, ni pour l&apos;envoi
+            de communications politiques non sollicitées.
+          </p>
+          <p className="mt-2">
+            Pour en savoir plus, consultez notre{" "}
             <Link
               href="/politique-de-confidentialite"
               className="font-semibold text-alice-blue underline-offset-4 hover:underline"
