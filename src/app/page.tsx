@@ -4,6 +4,11 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/Container";
 import { sections } from "@/data/site";
 
+const latestPublication = {
+  label: "Lire notre premier communiqué",
+  href: "/documents/alice-communique-45e-session.pdf",
+};
+
 export default function HomePage() {
   return (
     <>
@@ -24,6 +29,14 @@ export default function HomePage() {
                 et transparent, au service des conseillers des Français de
                 l&apos;étranger et des communautés qu&apos;ils représentent.
               </p>
+              <a
+                href={latestPublication.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="animate-fade-up animate-delay-2 mt-8 inline-flex max-w-full items-center justify-center bg-alice-navy px-6 py-3 text-center text-[0.95rem] font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-alice-blue"
+              >
+                {latestPublication.label}
+              </a>
             </div>
             <Image
               src="/images/hero-groupe.jpg"
