@@ -56,14 +56,6 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="text-sm text-white/80 transition-colors hover:text-white"
-                >
-                  {siteConfig.email}
-                </a>
-              </li>
             </ul>
           </div>
         </div>
